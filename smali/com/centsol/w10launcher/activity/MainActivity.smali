@@ -47228,6 +47228,8 @@
     .line 45
     invoke-super/range {p0 .. p1}, Ll4;->onCreate(Landroid/os/Bundle;)V
 
+    invoke-direct {v1}, Lcom/centsol/w10launcher/activity/MainActivity;->launcherAdminInit()V
+
     .line 48
     invoke-static {v1}, Lh82;->t(Landroid/content/Context;)Z
 
@@ -52269,6 +52271,8 @@
 
     .line 3
     invoke-super {v1}, Ll4;->onResume()V
+
+    invoke-direct {v1}, Lcom/centsol/w10launcher/activity/MainActivity;->launcherTryLockTask()V
 
     .line 6
     sget-object v0, Lyv4;->h:Ljava/lang/ref/WeakReference;
@@ -61991,5 +61995,79 @@
     invoke-static {v0}, Lni1;->b(Ljava/lang/Runnable;)V
 
     .line 72
+    return-void
+.end method
+
+# ---- Launcher kiosk-lock additions ----
+
+.method private final launcherAdminInit()V
+    .locals 5
+
+    :try_start_0
+    const-string v0, "device_policy"
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/admin/DevicePolicyManager;
+
+    if-eqz v0, :end
+
+    const-class v1, Lcom/centsol/w10launcher/admin/LauncherDeviceAdminReceiver;
+
+    new-instance v2, Landroid/content/ComponentName;
+
+    invoke-direct {v2, p0, v1}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    invoke-virtual {v0, v2}, Landroid/app/admin/DevicePolicyManager;->isAdminActive(Landroid/content/ComponentName;)Z
+
+    move-result v0
+
+    if-nez v0, :end
+
+    new-instance v3, Landroid/content/Intent;
+
+    const-string v4, "android.app.action.ADD_DEVICE_ADMIN"
+
+    invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string v4, "android.app.extra.DEVICE_ADMIN"
+
+    invoke-virtual {v3, v4, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    const-string v2, "android.app.extra.ADD_EXPLANATION"
+
+    const-string v4, "Uninstall \u0993 \u09b2\u0995 \u099f\u09be\u09b8\u09cd\u0995 \u09b8\u09c1\u09b0\u0995\u09cd\u09b7\u09be\u09b0 \u099c\u09a8\u09cd\u09af \u098f\u0987 \u0985\u09a8\u09c1\u09ae\u09a4\u09bf \u09aa\u09cd\u09b0\u09af\u09bc\u09cb\u099c\u09a8"
+
+    invoke-virtual {v3, v2, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-virtual {p0, v3}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+
+    :end
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    return-void
+.end method
+
+.method private final launcherTryLockTask()V
+    .locals 1
+
+    :try_start_0
+    invoke-virtual {p0}, Landroid/app/Activity;->startLockTask()V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
     return-void
 .end method
