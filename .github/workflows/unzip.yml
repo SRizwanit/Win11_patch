@@ -1,1 +1,188 @@
+name: Auto Unzip & Push
 
+# দুইভাবে চলবে:
+# ১) রিপোতে .zip push করলে (ছোট জিপের জন্য)
+# ২) Actions ট্যাব থেকে হাতে চালিয়ে direct download লিংক দিলে (বড় জিপের জন্য)
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - '**.zip'
+  workflow_dispatch:
+    inputs:
+      zip_url:
+        description: 'Direct download লিংক (একাধিক হলে space দিয়ে আলাদা করুন). খালি রাখলে রিপোর ভেতরের .zip খুঁজে extract করবে'
+        required: false
+        type: string
+        default: ''
+      dest_dir:
+        description: 'কোন ফোল্ডারে extract হবে (রিপোর root থেকে, "." মানে root)'
+        required: false
+        type: string
+        default: '.'
+      strip_single_root:
+        description: 'জিপে একটাই root ফোল্ডার থাকলে সেটা বাদ দিয়ে ভেতরের জিনিস extract করবে'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-unzip
+  cancel-in-progress: false
+
+env:
+  # true করলে: জিপের ভেতরে একটাই root ফোল্ডার থাকলে সেটা বাদ দিয়ে ভেতরের জিনিস extract হবে
+  STRIP_SINGLE_ROOT: ${{ github.event_name == 'workflow_dispatch' && inputs.strip_single_root || 'false' }}
+  # true করলে: extract শেষে রিপোর মূল .zip ফাইল মুছে যাবে (URL থেকে নামানো জিপ সবসময় temp-এ থাকে, রিপোতে ঢোকে না)
+  DELETE_ZIP_AFTER: "true"
+  # এর চেয়ে বড় (MB) নতুন/পরিবর্তিত ফাইল স্বয়ংক্রিয়ভাবে Git LFS-এ যাবে
+  LFS_THRESHOLD_MB: "25"
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true   # রিপোতে LFS-এ থাকা জিপ থাকলেও যেন আসল ফাইল পাওয়া যায়
+
+      - name: Download (if URL given) & extract zip files
+        shell: bash
+        env:
+          # input সরাসরি script-এ না বসিয়ে env দিয়ে পাঠানো হচ্ছে (injection এড়াতে)
+          ZIP_URLS: ${{ github.event_name == 'workflow_dispatch' && inputs.zip_url || '' }}
+          INPUT_DEST: ${{ github.event_name == 'workflow_dispatch' && inputs.dest_dir || '.' }}
+        run: |
+          set -euo pipefail
+          git config core.quotepath false
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip rsync >/dev/null
+
+          # একটা জিপ extract করার ফাংশন: extract_zip <zip-path> <destination-dir>
+          extract_zip() {
+            local Z="$1" DEST="$2"
+            local TMP SRC COUNT
+            TMP="$(mktemp -d)"
+            mkdir -p "$DEST"
+
+            # extract (non-ASCII নামের জন্য UTF-8 চেষ্টা, না হলে ডিফল্ট)
+            unzip -o -q -O UTF-8 "$Z" -d "$TMP" 2>/dev/null || unzip -o -q "$Z" -d "$TMP"
+
+            # অপ্রয়োজনীয় ফাইল মুছে ফেলা
+            rm -rf "$TMP/__MACOSX"
+            find "$TMP" -name '.DS_Store' -delete
+
+            # জিপের ভেতরের যেকোনো লেভেলের .github ফোল্ডার বাদ
+            find "$TMP" -type d -name '.github' -prune -exec rm -rf {} +
+
+            # একটাই root ফোল্ডার থাকলে strip করার অপশন
+            SRC="$TMP"
+            if [ "$STRIP_SINGLE_ROOT" = "true" ]; then
+              COUNT=$(find "$TMP" -mindepth 1 -maxdepth 1 | wc -l)
+              if [ "$COUNT" -eq 1 ] && [ -d "$(find "$TMP" -mindepth 1 -maxdepth 1)" ]; then
+                SRC="$(find "$TMP" -mindepth 1 -maxdepth 1)"
+              fi
+            fi
+
+            # structure ঠিক রেখে কপি (একই নামের ফাইল ওভাররাইট হবে)
+            rsync -a "$SRC"/ "$DEST"/
+            rm -rf "$TMP"
+          }
+
+          # ---------- মোড ১: Direct download লিংক ----------
+          if [ -n "${ZIP_URLS// /}" ]; then
+            # dest_dir যাচাই: absolute path বা .. অনুমোদিত নয়
+            case "$INPUT_DEST" in
+              /*|*..*) echo "::error::dest_dir অবশ্যই রিপোর ভেতরের relative path হতে হবে (/ বা .. চলবে না)"; exit 1 ;;
+            esac
+            DEST_DIR="${INPUT_DEST:-.}"
+
+            DL_DIR="$RUNNER_TEMP/downloads"
+            mkdir -p "$DL_DIR"
+
+            read -ra URLS <<< "$ZIP_URLS"
+            N=0
+            for URL in "${URLS[@]}"; do
+              N=$((N + 1))
+              F="$DL_DIR/download_$N.zip"
+              echo "=== Downloading #$N ..."
+              curl -fL --retry 3 --retry-delay 5 --connect-timeout 30 \
+                   --progress-bar -o "$F" "$URL"
+
+              # সত্যিই জিপ কিনা যাচাই (অনেক সময় লিংক HTML পেজ ফেরত দেয়)
+              if ! unzip -tq "$F" >/dev/null 2>&1; then
+                echo "::error::#$N লিংক থেকে নামানো ফাইলটি বৈধ zip নয়। এটা direct download লিংক কিনা দেখুন (Google Drive/Dropbox হলে direct রূপ ব্যবহার করুন)"
+                exit 1
+              fi
+
+              echo "Downloaded: $(du -h "$F" | cut -f1)"
+              echo "=== Extracting #$N -> $DEST_DIR"
+              extract_zip "$F" "$DEST_DIR"
+              rm -f "$F"
+            done
+            exit 0
+          fi
+
+          # ---------- মোড ২: রিপোর ভেতরের .zip ----------
+          mapfile -d '' ZIPS < <(find . -type f -iname '*.zip' \
+            -not -path './.git/*' -not -path './.github/*' -print0)
+
+          if [ ${#ZIPS[@]} -eq 0 ]; then
+            echo "কোনো zip পাওয়া যায়নি।"
+            exit 0
+          fi
+
+          for Z in "${ZIPS[@]}"; do
+            echo "=== Processing: $Z"
+            extract_zip "$Z" "$(dirname "$Z")"
+
+            if [ "$DELETE_ZIP_AFTER" = "true" ]; then
+              git rm -q -f "$Z" 2>/dev/null || rm -f "$Z"
+            fi
+          done
+
+      - name: Track large files with Git LFS
+        shell: bash
+        run: |
+          set -euo pipefail
+          git lfs install --local
+
+          LIMIT=$(( LFS_THRESHOLD_MB * 1024 * 1024 ))
+          COUNT=0
+
+          # শুধু নতুন বা পরিবর্তিত ফাইল দেখা হবে (আগের commit করা ফাইলে হাত পড়বে না)
+          while IFS= read -r -d '' F; do
+            [ -f "$F" ] || continue
+            case "$F" in .git/*|.github/*) continue ;; esac
+
+            SIZE=$(stat -c %s "$F")
+            if [ "$SIZE" -gt "$LIMIT" ]; then
+              echo "LFS tracking: $F ($(( SIZE / 1024 / 1024 )) MB)"
+              git lfs track --filename "$F" >/dev/null
+              COUNT=$((COUNT + 1))
+            fi
+          done < <(git ls-files -z --others --modified --exclude-standard)
+
+          echo "মোট $COUNT টি ফাইল LFS-এ যাবে।"
+
+      - name: Commit & push
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A   # .gitattributes (LFS rules) সহ
+          if git diff --cached --quiet; then
+            echo "কোনো পরিবর্তন নেই।"
+            exit 0
+          fi
+
+          git commit -m "Auto-unzip: extracted zip file(s) [skip ci]"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
