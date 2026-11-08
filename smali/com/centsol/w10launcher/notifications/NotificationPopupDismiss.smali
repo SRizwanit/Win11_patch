@@ -26,18 +26,18 @@
     .catch Landroid/app/PendingIntent$CanceledException; {:try_start_0 .. :try_end_0} :click_error
 
     :remove_popup
-    invoke-virtual {p0}, Lcom/centsol/w10launcher/notifications/NotificationPopupDismiss;->removePopup()V
+    invoke-direct {p0}, Lcom/centsol/w10launcher/notifications/NotificationPopupDismiss;->removePopup()V
     return-void
 
     :click_error
     move-exception v0
-    invoke-virtual {p0}, Lcom/centsol/w10launcher/notifications/NotificationPopupDismiss;->removePopup()V
+    invoke-direct {p0}, Lcom/centsol/w10launcher/notifications/NotificationPopupDismiss;->removePopup()V
     return-void
 .end method
 
 .method public final run()V
     .locals 0
-    invoke-virtual {p0}, Lcom/centsol/w10launcher/notifications/NotificationPopupDismiss;->removePopup()V
+    invoke-direct {p0}, Lcom/centsol/w10launcher/notifications/NotificationPopupDismiss;->removePopup()V
     return-void
 .end method
 

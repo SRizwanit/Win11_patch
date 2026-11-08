@@ -1939,7 +1939,7 @@
 
 
 .method private final showMessagePopup(Landroid/service/notification/StatusBarNotification;)V
-    .locals 16
+    .locals 13
 
     :try_start_0
     invoke-virtual/range {p1 .. p1}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
@@ -2072,7 +2072,7 @@
     const/16 v10, 0x7f6
     const/16 v11, 0x108
     const/4 v12, -0x3
-    invoke-direct {v7, v8, v9, v10, v11, v12}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
+    invoke-direct/range {v7 .. v12}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
     const/16 v8, 0x31
     iput v8, v7, Landroid/view/WindowManager$LayoutParams;->gravity:I
     const/16 v8, 0x30
