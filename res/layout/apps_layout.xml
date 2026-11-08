@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:id="@id/sv_apps"
+    android:scrollbars="none"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="@dimen/normal_margin"
+    android:layout_marginRight="@dimen/normal_margin"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@id/ll_apps"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="14.0sp"
+            android:textColor="@android:color/black"
+            android:gravity="center_vertical"
+            android:id="@id/tv_computer_launcher_apps"
+            android:background="@drawable/ripple_quick_access_item_bg"
+            android:padding="@dimen/margin_15dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/more_apps"
+            android:drawableLeft="@drawable/store_icon"
+            android:drawablePadding="@dimen/normal_margin" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="@dimen/margin_15dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_shortcut_apps"
+                android:drawableLeft="@drawable/app_shortcut"
+                android:drawablePadding="@dimen/normal_margin" />
+            <ToggleButton
+                android:id="@id/cb_add_app_shortcut"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/settings_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:button="@drawable/toggle_selector"
+                android:textOn=""
+                android:textOff=""
+                android:minWidth="0.0dip"
+                android:minHeight="0.0dip" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="@dimen/margin_15dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recent_apps"
+                android:drawableLeft="@drawable/recent_apps"
+                android:drawablePadding="@dimen/normal_margin" />
+            <ToggleButton
+                android:id="@id/cb_recent_apps"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/settings_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:button="@drawable/toggle_selector"
+                android:textOn=""
+                android:textOff=""
+                android:minWidth="0.0dip"
+                android:minHeight="0.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

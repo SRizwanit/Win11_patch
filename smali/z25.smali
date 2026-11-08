@@ -1,0 +1,25 @@
+.class public abstract Lz25;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field public static final a:Ljava/util/LinkedHashSet;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Ljava/util/LinkedHashSet;
+
+    .line 3
+    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
+
+    .line 6
+    sput-object v0, Lz25;->a:Ljava/util/LinkedHashSet;
+
+    .line 8
+    return-void
+.end method

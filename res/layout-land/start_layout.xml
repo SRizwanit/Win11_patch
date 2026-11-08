@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@id/ll_start_menu_blur"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/xlarge_margin">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@id/ll_start_menu_main"
+            android:layout_width="wrap_content"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0">
+            <RelativeLayout
+                android:gravity="bottom"
+                android:layout_gravity="bottom"
+                android:visibility="visible"
+                android:layout_width="170.0dip"
+                android:layout_height="fill_parent">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="40.0dip">
+                    <EditText
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@android:color/white"
+                        android:id="@id/search_field"
+                        android:background="@android:color/transparent"
+                        android:paddingLeft="@dimen/normal_margin"
+                        android:paddingTop="15.0dip"
+                        android:paddingBottom="@dimen/normal_margin"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/search"
+                        android:singleLine="true"
+                        android:drawableLeft="@drawable/search"
+                        android:drawablePadding="5.0dip"
+                        android:imeOptions="actionDone" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@id/rv_apps_list"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:divider="@android:color/transparent"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+                    <GridView
+                        android:gravity="center"
+                        android:id="@id/start_menu_grid"
+                        android:visibility="gone"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:horizontalSpacing="10.0dip"
+                        android:verticalSpacing="10.0dip"
+                        android:stretchMode="columnWidth"
+                        android:columnWidth="20.0dip"
+                        android:numColumns="auto_fit" />
+                </LinearLayout>
+                <include
+                    layout="@layout/start_menu_left_icons_layout" />
+            </RelativeLayout>
+            <LinearLayout
+                android:gravity="top"
+                android:layout_gravity="bottom"
+                android:orientation="vertical"
+                android:padding="5.0dip"
+                android:layout_width="170.0dip"
+                android:layout_height="fill_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@id/rv_sectioned"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+            </LinearLayout>
+        </LinearLayout>
+        <FrameLayout
+            android:id="@id/fl_native_ad_start_menu"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

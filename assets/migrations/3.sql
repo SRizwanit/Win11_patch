@@ -1,0 +1,1 @@
+ALTER TABLE HiddenAppsInfo ADD COLUMN isCurrentUser BOOLEAN;

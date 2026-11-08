@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_gravity="end"
+    android:orientation="vertical"
+    android:id="@id/preview_action_center_panel"
+    android:background="@drawable/intro_preview_panel"
+    android:paddingTop="9.0dip"
+    android:paddingBottom="7.0dip"
+    android:visibility="gone"
+    android:layout_width="164.0dip"
+    android:layout_height="fill_parent"
+    android:paddingStart="7.0dip"
+    android:paddingEnd="7.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="7.0sp"
+            android:textColor="@android:color/white"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/action_center"
+            android:includeFontPadding="false"
+            android:layout_weight="1.0" />
+        <TextView
+            android:textSize="7.0sp"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/intro_preview_clear_all"
+            android:includeFontPadding="false" />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9.0dip">
+        <TextView
+            android:textSize="7.0sp"
+            android:textColor="@android:color/white"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/intro_preview_enable_notification"
+            android:includeFontPadding="false"
+            android:layout_weight="1.0" />
+        <FrameLayout
+            android:background="@drawable/intro_preview_toggle"
+            android:layout_width="18.0dip"
+            android:layout_height="10.0dip">
+            <View
+                android:layout_gravity="start|center"
+                android:background="@drawable/intro_preview_toggle_knob"
+                android:layout_width="6.0dip"
+                android:layout_height="6.0dip"
+                android:layout_marginStart="2.0dip" />
+        </FrameLayout>
+    </LinearLayout>
+    <Space
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:background="@drawable/intro_preview_ac_tile_off"
+            style="@style/IntroPreviewAcTile">
+            <ImageView
+                android:src="@drawable/intro_ac_airplane"
+                android:contentDescription="@null"
+                style="@style/IntroPreviewAcIcon" />
+            <TextView
+                android:text="@string/airplane"
+                style="@style/IntroPreviewAcLabel" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/intro_preview_ac_tile_on"
+            style="@style/IntroPreviewAcTile">
+            <ImageView
+                android:src="@drawable/intro_ac_wifi"
+                android:contentDescription="@null"
+                style="@style/IntroPreviewAcIcon" />
+            <TextView
+                android:text="@string/wifi"
+                style="@style/IntroPreviewAcLabel" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/intro_preview_ac_tile_on"
+            style="@style/IntroPreviewAcTile">
+            <ImageView
+                android:src="@drawable/intro_ac_bluetooth"
+                android:contentDescription="@null"
+                style="@style/IntroPreviewAcIcon" />
+            <TextView
+                android:text="@string/bluetooth"
+                style="@style/IntroPreviewAcLabel" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:background="@drawable/intro_preview_ac_tile_off"
+            style="@style/IntroPreviewAcTile">
+            <ImageView
+                android:src="@drawable/intro_ac_flashlight"
+                android:contentDescription="@null"
+                style="@style/IntroPreviewAcIcon" />
+            <TextView
+                android:text="@string/flashlight"
+                style="@style/IntroPreviewAcLabel" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/intro_preview_ac_tile_off"
+            style="@style/IntroPreviewAcTile">
+            <ImageView
+                android:src="@drawable/intro_ac_brightness"
+                android:contentDescription="@null"
+                style="@style/IntroPreviewAcIcon" />
+            <TextView
+                android:text="@string/intro_preview_manual"
+                style="@style/IntroPreviewAcLabel" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/intro_preview_ac_tile_off"
+            style="@style/IntroPreviewAcTile">
+            <ImageView
+                android:src="@drawable/intro_ac_data"
+                android:contentDescription="@null"
+                style="@style/IntroPreviewAcIcon" />
+            <TextView
+                android:text="@string/data"
+                style="@style/IntroPreviewAcLabel" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:background="@drawable/intro_preview_ac_tile_on"
+            style="@style/IntroPreviewAcTile">
+            <ImageView
+                android:src="@drawable/intro_ac_rotate"
+                android:contentDescription="@null"
+                style="@style/IntroPreviewAcIcon" />
+            <TextView
+                android:text="@string/rotate"
+                style="@style/IntroPreviewAcLabel" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/intro_preview_ac_tile_off"
+            style="@style/IntroPreviewAcTile">
+            <ImageView
+                android:src="@drawable/intro_ac_hotspot"
+                android:contentDescription="@null"
+                style="@style/IntroPreviewAcIcon" />
+            <TextView
+                android:text="@string/hotspot"
+                style="@style/IntroPreviewAcLabel" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/intro_preview_ac_tile_on"
+            style="@style/IntroPreviewAcTile">
+            <ImageView
+                android:src="@drawable/intro_ac_location"
+                android:contentDescription="@null"
+                style="@style/IntroPreviewAcIcon" />
+            <TextView
+                android:text="@string/location"
+                style="@style/IntroPreviewAcLabel" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:background="@drawable/intro_preview_ac_tile_off"
+            style="@style/IntroPreviewAcTile">
+            <ImageView
+                android:src="@drawable/intro_ac_settings"
+                android:contentDescription="@null"
+                style="@style/IntroPreviewAcIcon" />
+            <TextView
+                android:text="@string/settings_launcher"
+                style="@style/IntroPreviewAcLabel" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/intro_preview_ac_tile_off"
+            style="@style/IntroPreviewAcTile">
+            <ImageView
+                android:src="@drawable/intro_ac_sound"
+                android:contentDescription="@null"
+                style="@style/IntroPreviewAcIcon" />
+            <TextView
+                android:text="@string/intro_preview_sound"
+                style="@style/IntroPreviewAcLabel" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/intro_preview_ac_tile_off"
+            style="@style/IntroPreviewAcTile">
+            <ImageView
+                android:src="@drawable/intro_ac_wallpapers"
+                android:contentDescription="@null"
+                style="@style/IntroPreviewAcIcon" />
+            <TextView
+                android:text="@string/wallpapers"
+                style="@style/IntroPreviewAcLabel" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8.0dip">
+        <ImageView
+            android:layout_width="10.0dip"
+            android:layout_height="10.0dip"
+            android:src="@drawable/intro_ac_brightness"
+            android:contentDescription="@null" />
+        <View
+            android:background="@drawable/intro_preview_slider_track"
+            android:layout_width="0.0dip"
+            android:layout_height="2.0dip"
+            android:layout_weight="0.35"
+            android:layout_marginStart="6.0dip" />
+        <View
+            android:background="#40ffffff"
+            android:layout_width="0.0dip"
+            android:layout_height="2.0dip"
+            android:layout_weight="0.65" />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7.0dip">
+        <ImageView
+            android:layout_width="10.0dip"
+            android:layout_height="10.0dip"
+            android:src="@drawable/intro_ac_sound"
+            android:contentDescription="@null" />
+        <View
+            android:background="@drawable/intro_preview_slider_track"
+            android:layout_width="0.0dip"
+            android:layout_height="2.0dip"
+            android:layout_weight="0.62"
+            android:layout_marginStart="6.0dip" />
+        <View
+            android:background="#40ffffff"
+            android:layout_width="0.0dip"
+            android:layout_height="2.0dip"
+            android:layout_weight="0.38" />
+    </LinearLayout>
+</LinearLayout>

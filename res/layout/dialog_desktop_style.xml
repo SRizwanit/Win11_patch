@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:paddingTop="20.0dip"
+    android:paddingBottom="8.0dip"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="24.0dip"
+    android:paddingEnd="24.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:textSize="20.0sp"
+        android:textColor="#de000000"
+        android:id="@id/desktop_style_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/desktop_style_title"
+        android:fontFamily="sans-serif-medium" />
+    <TextView
+        android:textSize="14.0sp"
+        android:textColor="#99000000"
+        android:id="@id/desktop_style_message"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8.0dip"
+        android:text="@string/desktop_style_message"
+        android:lineSpacingExtra="2.0sp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20.0dip"
+        android:baselineAligned="false">
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:id="@id/desktop_style_option_tiles"
+            android:padding="8.0dip"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:layout_marginEnd="6.0dip">
+            <FrameLayout
+                android:id="@id/desktop_style_preview_tiles"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="#de000000"
+                android:gravity="center_horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:text="@string/desktop_style_tiles"
+                android:fontFamily="sans-serif-medium" />
+            <TextView
+                android:textSize="12.0sp"
+                android:textColor="#99000000"
+                android:gravity="center_horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2.0dip"
+                android:text="@string/desktop_style_tiles_hint" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:id="@id/desktop_style_option_icons"
+            android:padding="8.0dip"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:layout_marginStart="6.0dip">
+            <FrameLayout
+                android:id="@id/desktop_style_preview_icons"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="#de000000"
+                android:gravity="center_horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:text="@string/desktop_style_icons"
+                android:fontFamily="sans-serif-medium" />
+            <TextView
+                android:textSize="12.0sp"
+                android:textColor="#99000000"
+                android:gravity="center_horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2.0dip"
+                android:text="@string/desktop_style_icons_hint" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@id/desktop_style_glass_row"
+        android:background="?android:selectableItemBackground"
+        android:focusable="true"
+        android:clickable="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16.0dip"
+        android:minHeight="48.0dip"
+        android:paddingStart="8.0dip"
+        android:paddingEnd="8.0dip">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0">
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="#de000000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desktop_style_glass"
+                android:fontFamily="sans-serif-medium" />
+            <TextView
+                android:textSize="12.0sp"
+                android:textColor="#99000000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2.0dip"
+                android:text="@string/desktop_style_glass_hint" />
+        </LinearLayout>
+        <ToggleButton
+            android:id="@id/desktop_style_glass_switch"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/toggle_selector"
+            android:textOn=""
+            android:textOff=""
+            android:minWidth="0.0dip"
+            android:minHeight="0.0dip"
+            android:layout_marginStart="12.0dip" />
+    </LinearLayout>
+</LinearLayout>

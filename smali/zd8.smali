@@ -1,0 +1,13 @@
+.class public final Lzd8;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# instance fields
+.field public a:I
+
+.field public b:Ljava/util/HashMap;
+
+.field public c:Ljava/lang/String;
+
+.field public d:J

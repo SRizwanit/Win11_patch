@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/medium_margin"
+    android:paddingTop="8.0dip"
+    android:paddingRight="@dimen/medium_margin"
+    android:paddingBottom="8.0dip"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/fm_touch_min"
+    android:paddingHorizontal="@dimen/medium_margin"
+    android:paddingVertical="8.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@id/group_icon"
+        android:layout_width="20.0dip"
+        android:layout_height="20.0dip"
+        android:src="@drawable/empty_folder"
+        android:contentDescription="@null"
+        android:layout_marginStart="18.0dip" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textStyle="normal"
+        android:textColor="#ff000000"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:id="@id/lblListHeader"
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:maxLines="1"
+        android:layout_weight="1.0"
+        android:layout_marginStart="7.0dip"
+        app:autoSizeMaxTextSize="@dimen/fm_text_body"
+        app:autoSizeMinTextSize="11.0sp"
+        app:autoSizeStepGranularity="1.0sp"
+        app:autoSizeTextType="uniform" />
+</LinearLayout>

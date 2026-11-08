@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.centsol.w10launcher.util.ViewPagerFixed
+        android:id="@id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <RelativeLayout
+        android:id="@id/rl_top"
+        android:background="@color/dark_gray_text_color"
+        android:layout_width="fill_parent"
+        android:layout_height="45.0dip"
+        android:layout_alignParentTop="true">
+        <TextView
+            android:textColor="@android:color/white"
+            android:id="@id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/large_margin"
+            android:layout_centerVertical="true" />
+        <ImageView
+            android:id="@id/iv_close"
+            android:padding="@dimen/medium_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/medium_margin"
+            android:src="@drawable/ic_close"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@color/dark_gray_text_color"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_alignParentBottom="true">
+        <ImageView
+            android:id="@id/iv_set_wallpaper"
+            android:padding="@dimen/medium_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/medium_margin"
+            android:src="@drawable/ic_set_wallpaper" />
+        <ImageView
+            android:id="@id/iv_share"
+            android:padding="@dimen/medium_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/medium_margin"
+            android:src="@drawable/ic_share" />
+        <ImageView
+            android:id="@id/iv_menu"
+            android:padding="@dimen/medium_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_about" />
+    </LinearLayout>
+</RelativeLayout>

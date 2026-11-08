@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:scrollbars="none"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingTop="12.0dip"
+        android:paddingBottom="12.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="24.0dip"
+        android:paddingEnd="24.0dip">
+        <TextView
+            android:textSize="22.0sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/intro_permissions_title" />
+        <TextView
+            android:textSize="14.0sp"
+            android:textColor="#ccffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8.0dip"
+            android:text="@string/intro_permissions_subtitle"
+            android:lineSpacingExtra="3.0dip" />
+        <include
+            android:id="@id/row_storage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14.0dip"
+            layout="@layout/intro_permission_row" />
+        <include
+            android:id="@id/row_notifications"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            layout="@layout/intro_permission_row" />
+        <include
+            android:id="@id/row_location"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            layout="@layout/intro_permission_row" />
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:minHeight="4.0dip"
+            android:layout_weight="1.0" />
+        <TextView
+            android:textSize="13.0sp"
+            android:textColor="#8cffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8.0dip"
+            android:text="@string/intro_permissions_footnote" />
+    </LinearLayout>
+</ScrollView>

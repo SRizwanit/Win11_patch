@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:id="@id/ll_rewards"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/normal_margin"
+    android:layout_marginRight="@dimen/normal_margin"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@id/ll_daily_checkin"
+        android:background="@drawable/ripple_quick_access_item_bg"
+        android:padding="@dimen/margin_15dp"
+        android:focusable="true"
+        android:clickable="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="14.0sp"
+            android:textColor="@android:color/black"
+            android:gravity="center_vertical"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/daily_checkin_title"
+            android:drawableLeft="@drawable/ic_daily_checkin_black"
+            android:drawablePadding="@dimen/normal_margin"
+            android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@id/ll_spin_wheel"
+        android:background="@drawable/ripple_quick_access_item_bg"
+        android:padding="@dimen/margin_15dp"
+        android:focusable="true"
+        android:clickable="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="14.0sp"
+            android:textColor="@android:color/black"
+            android:gravity="center_vertical"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/spin_wheel"
+            android:drawableLeft="@drawable/ic_spin_wheel_black"
+            android:drawablePadding="@dimen/normal_margin"
+            android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

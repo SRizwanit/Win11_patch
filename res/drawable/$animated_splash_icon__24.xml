@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set
+    android:ordering="together"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <objectAnimator
+        android:interpolator="@drawable/$animated_splash_icon__25"
+        android:duration="583"
+        android:startOffset="0"
+        android:propertyName="translateXY"
+        android:pathData="M 155.143,262.698C 155.143,242.69799999999998 155.143,282.698 155.143,262.698"
+        android:propertyXName="translateX"
+        android:propertyYName="translateY" />
+    <objectAnimator
+        android:interpolator="@drawable/$animated_splash_icon__26"
+        android:duration="333"
+        android:startOffset="583"
+        android:propertyName="translateXY"
+        android:pathData="M 155.143,262.698C 155.143,242.69799999999998 155.143,162.698 155.143,142.698"
+        android:propertyXName="translateX"
+        android:propertyYName="translateY" />
+</set>

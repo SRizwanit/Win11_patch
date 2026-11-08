@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@android:color/white"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:id="@id/rl_toolbar"
+        android:paddingLeft="8.0dip"
+        android:paddingRight="8.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="?actionBarSize"
+        android:paddingHorizontal="8.0dip">
+        <ImageView
+            android:id="@id/iv_back"
+            android:padding="8.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_centerVertical="true"
+            app:tint="#ff333333" />
+        <TextView
+            android:textSize="20.0sp"
+            android:textStyle="bold"
+            android:textColor="#ff333333"
+            android:id="@id/tv_theme_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/iv_back" />
+        <ImageView
+            android:id="@id/iv_share"
+            android:padding="8.0dip"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_share"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            app:tint="#ff333333" />
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/ll_bottom"
+        android:layout_below="@id/rl_toolbar">
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@id/vp_previews"
+            android:paddingLeft="@dimen/large_margin"
+            android:paddingRight="@dimen/large_margin"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:paddingHorizontal="@dimen/large_margin" />
+        <com.google.android.material.loadingindicator.LoadingIndicator
+            android:layout_gravity="center"
+            android:id="@id/pb_preview_loading"
+            android:visibility="gone"
+            android:layout_width="48.0dip"
+            android:layout_height="48.0dip"
+            app:indicatorColor="#ff0084ff" />
+    </FrameLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@id/ll_bottom"
+        android:padding="24.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:textSize="18.0sp"
+            android:textStyle="bold"
+            android:textColor="#ff333333"
+            android:id="@id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price_free" />
+        <TextView
+            android:textSize="14.0sp"
+            android:textColor="#ff757575"
+            android:id="@id/tv_theme_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4.0dip" />
+        <Button
+            android:textSize="18.0sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:id="@id/btn_apply"
+            android:layout_width="fill_parent"
+            android:layout_height="46.0dip"
+            android:layout_marginTop="24.0dip"
+            android:text="@string/apply"
+            android:textAllCaps="false"
+            app:backgroundTint="@null"
+            app:cornerRadius="28.0dip" />
+    </LinearLayout>
+    <com.google.android.material.loadingindicator.LoadingIndicator
+        android:id="@id/progressBar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+</RelativeLayout>

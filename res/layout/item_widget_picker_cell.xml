@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="164.0dip"
+    android:layout_height="wrap_content"
+    android:paddingStart="4.0dip"
+    android:paddingEnd="4.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout
+        android:id="@id/widget_picker_cell_card"
+        android:background="@drawable/widget_picker_cell_bg"
+        android:focusable="true"
+        android:clickable="true"
+        android:layout_width="fill_parent"
+        android:layout_height="132.0dip"
+        android:foreground="?android:selectableItemBackground">
+        <ImageView
+            android:id="@id/widget_preview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10.0dip"
+            android:scaleType="fitCenter"
+            android:contentDescription="@null" />
+    </FrameLayout>
+    <TextView
+        android:textSize="13.0sp"
+        android:textColor="#de000000"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:id="@id/widget_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8.0dip"
+        android:maxLines="1" />
+    <TextView
+        android:textSize="12.0sp"
+        android:textColor="#8a000000"
+        android:gravity="center_horizontal"
+        android:id="@id/widget_dims"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2.0dip" />
+</LinearLayout>

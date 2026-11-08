@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:cc="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:id="@id/rl_calendar_blur"
+        android:layout_width="320.0dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@id/ll_main_calendar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <CustomTextClock.TextClock
+                android:textSize="26.0sp"
+                android:textColor="#ffffffff"
+                android:id="@id/textClock_calendar"
+                android:paddingLeft="@dimen/normal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                cc:format12Hour="hh:mm:ss a"
+                cc:format24Hour="HH:mm:ss" />
+            <CustomTextClock.TextClock
+                android:textSize="12.0sp"
+                android:textColor="#ff0078d7"
+                android:id="@id/ctc_calendar_date"
+                android:paddingLeft="@dimen/normal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                cc:format12Hour="EEEE, d MMMM yyyy"
+                cc:format24Hour="EEEE, MMMM d, yyyy" />
+            <View
+                android:background="#ff676767"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:layout_marginBottom="@dimen/normal_margin" />
+            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                android:id="@id/calendarView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                cc:mcv_dateTextAppearance="@style/CustomTextAppearance"
+                cc:mcv_headerTextAppearance="@style/CustomMonthTextAppearance"
+                cc:mcv_selectionColor="#ff0078d7"
+                cc:mcv_showOtherDates="all"
+                cc:mcv_weekDayTextAppearance="@style/CustomWeekTextAppearanceLight" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

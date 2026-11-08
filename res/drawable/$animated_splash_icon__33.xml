@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set
+    android:ordering="together"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <objectAnimator
+        android:interpolator="@drawable/$animated_splash_icon__34"
+        android:duration="950"
+        android:startOffset="0"
+        android:valueFrom="M342.19 332.12 C342.19,332.12 378.43,332.19 378.43,332.19 C378.43,332.19 378.43,416.14 378.43,416.14 C378.43,416.14 342.19,416.07 342.19,416.07 C342.19,416.07 342.19,332.12 342.19,332.12c "
+        android:valueTo="M342.19 332.12 C342.19,332.12 378.43,332.19 378.43,332.19 C378.43,332.19 378.43,416.14 378.43,416.14 C378.43,416.14 342.19,416.07 342.19,416.07 C342.19,416.07 342.19,332.12 342.19,332.12c "
+        android:valueType="pathType"
+        android:propertyName="pathData" />
+    <objectAnimator
+        android:interpolator="@drawable/$animated_splash_icon__35"
+        android:duration="283"
+        android:startOffset="950"
+        android:valueFrom="M342.19 332.12 C342.19,332.12 378.43,332.19 378.43,332.19 C378.43,332.19 378.43,416.14 378.43,416.14 C378.43,416.14 342.19,416.07 342.19,416.07 C342.19,416.07 342.19,332.12 342.19,332.12c "
+        android:valueTo="M342.19 332.12 C342.19,332.12 378.43,332.19 378.43,332.19 C378.43,332.19 378.43,416.14 378.43,416.14 C378.43,416.14 342.19,416.07 342.19,416.07 C342.19,416.07 342.19,332.12 342.19,332.12c "
+        android:valueType="pathType"
+        android:propertyName="pathData" />
+    <objectAnimator
+        android:interpolator="@drawable/$animated_splash_icon__36"
+        android:duration="167"
+        android:startOffset="1233"
+        android:valueFrom="M342.19 332.12 C342.19,332.12 378.43,332.19 378.43,332.19 C378.43,332.19 378.43,416.14 378.43,416.14 C378.43,416.14 342.19,416.07 342.19,416.07 C342.19,416.07 342.19,332.12 342.19,332.12c "
+        android:valueTo="M342.19 332.12 C342.19,332.12 618.43,332.16 618.43,332.16 C618.43,332.16 618.43,416.12 618.43,416.12 C618.43,416.12 342.19,416.07 342.19,416.07 C342.19,416.07 342.19,332.12 342.19,332.12c "
+        android:valueType="pathType"
+        android:propertyName="pathData" />
+    <objectAnimator
+        android:interpolator="@drawable/$animated_splash_icon__37"
+        android:duration="167"
+        android:startOffset="1400"
+        android:valueFrom="M342.19 332.12 C342.19,332.12 618.43,332.16 618.43,332.16 C618.43,332.16 618.43,416.12 618.43,416.12 C618.43,416.12 342.19,416.07 342.19,416.07 C342.19,416.07 342.19,332.12 342.19,332.12c "
+        android:valueTo="M577.19 331.83 C577.19,331.83 618.43,332.16 618.43,332.16 C618.43,332.16 618.43,416.12 618.43,416.12 C618.43,416.12 577.19,415.79 577.19,415.79 C577.19,415.79 577.19,331.83 577.19,331.83c "
+        android:valueType="pathType"
+        android:propertyName="pathData" />
+    <objectAnimator
+        android:interpolator="@drawable/$animated_splash_icon__38"
+        android:duration="167"
+        android:startOffset="1567"
+        android:valueFrom="M577.19 331.83 C577.19,331.83 618.43,332.16 618.43,332.16 C618.43,332.16 618.43,416.12 618.43,416.12 C618.43,416.12 577.19,415.79 577.19,415.79 C577.19,415.79 577.19,331.83 577.19,331.83c "
+        android:valueTo="M429.19 332.02 C429.19,332.02 618.43,332.16 618.43,332.16 C618.43,332.16 618.43,416.12 618.43,416.12 C618.43,416.12 429.19,415.98 429.19,415.98 C429.19,415.98 429.19,332.02 429.19,332.02c "
+        android:valueType="pathType"
+        android:propertyName="pathData" />
+</set>

@@ -1,0 +1,12 @@
+ALTER TABLE RecentAppInfo ADD COLUMN userId TEXT;
+ALTER TABLE RecentAppInfo ADD COLUMN isCurrentUser BOOLEAN;
+ALTER TABLE ViewItemDB ADD COLUMN userId TEXT;
+ALTER TABLE ViewItemDB ADD COLUMN isCurrentUser BOOLEAN;
+ALTER TABLE TaskBarAppInfo ADD COLUMN userId TEXT;
+ALTER TABLE TaskBarAppInfo ADD COLUMN isCurrentUser BOOLEAN;
+ALTER TABLE StartMenuAppInfo ADD COLUMN userId TEXT;
+ALTER TABLE StartMenuAppInfo ADD COLUMN isCurrentUser BOOLEAN;
+ALTER TABLE StartMenuPlaySectionInfo ADD COLUMN userId TEXT;
+ALTER TABLE StartMenuPlaySectionInfo ADD COLUMN isCurrentUser BOOLEAN;
+ALTER TABLE StartMenuAppsSectionInfo ADD COLUMN userId TEXT;
+ALTER TABLE StartMenuAppsSectionInfo ADD COLUMN isCurrentUser BOOLEAN;

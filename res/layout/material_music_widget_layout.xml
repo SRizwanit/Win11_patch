@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:orientation="vertical"
+        android:id="@id/widget_root"
+        android:background="@drawable/music_player_bg"
+        android:layout_width="150.0dip"
+        android:layout_height="150.0dip">
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/large_margin"
+            android:layout_centerInParent="true">
+            <TextView
+                android:textSize="10.0sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:ellipsize="marquee"
+                android:id="@id/music_tv"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:marqueeRepeatLimit="2" />
+            <TextView
+                android:textSize="10.0sp"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:id="@id/tv_progress"
+                android:layout_width="40.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:text="0:00"
+                android:layout_below="@id/media_seekbar" />
+            <SeekBar
+                android:id="@id/media_seekbar"
+                android:paddingTop="@dimen/thumb_left_right_margin"
+                android:paddingBottom="@dimen/thumb_left_right_margin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="@dimen/small_margin"
+                android:progressDrawable="@drawable/progess_bar_bg"
+                android:minHeight="@dimen/small_margin"
+                android:thumb="@android:color/transparent"
+                android:layout_below="@id/music_tv" />
+            <TextView
+                android:textSize="10.0sp"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:id="@id/tv_duration"
+                android:layout_width="40.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/medium_margin"
+                android:text="0:00"
+                android:layout_below="@id/media_seekbar"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/pink_music_btn_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_alignParentRight="true">
+            <ImageButton
+                android:id="@id/btn_prev"
+                android:background="@android:color/transparent"
+                android:layout_width="40.0dip"
+                android:layout_height="40.0dip"
+                android:src="@drawable/ic_previous" />
+            <ImageButton
+                android:id="@id/btn_next"
+                android:background="@android:color/transparent"
+                android:layout_width="40.0dip"
+                android:layout_height="40.0dip"
+                android:src="@drawable/ic_next" />
+        </LinearLayout>
+        <ImageButton
+            android:id="@id/btn_play_pause"
+            android:background="@drawable/purple_music_btn_bg"
+            android:layout_width="40.0dip"
+            android:layout_height="40.0dip"
+            android:layout_marginLeft="@dimen/normal_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:src="@drawable/ic_play"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

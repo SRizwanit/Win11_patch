@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_gravity="bottom"
+    android:orientation="vertical"
+    android:id="@id/preview_customize"
+    android:background="@drawable/intro_preview_cz_sheet"
+    android:paddingTop="7.0dip"
+    android:paddingBottom="8.0dip"
+    android:visibility="gone"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5.0dip"
+    android:paddingStart="8.0dip"
+    android:paddingEnd="8.0dip"
+    android:layout_marginStart="5.0dip"
+    android:layout_marginEnd="5.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="12.0dip"
+            android:layout_height="12.0dip"
+            android:src="@drawable/intro_ac_brightness"
+            android:contentDescription="@null"
+            app:tint="#ff1a1a1a" />
+        <TextView
+            android:textSize="9.0sp"
+            android:textStyle="bold"
+            android:textColor="#ff1a1a1a"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/customize"
+            android:includeFontPadding="false"
+            android:layout_weight="1.0"
+            android:layout_marginStart="6.0dip" />
+        <View
+            android:background="@drawable/intro_preview_cz_size_small"
+            android:layout_width="5.0dip"
+            android:layout_height="5.0dip" />
+        <View
+            android:background="@drawable/intro_preview_cz_size_large"
+            android:layout_width="8.0dip"
+            android:layout_height="8.0dip"
+            android:layout_marginStart="1.0dip" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7.0dip">
+        <include
+            android:id="@id/preview_cz_look_1"
+            layout="@layout/intro_preview_cz_chip" />
+        <include
+            android:id="@id/preview_cz_look_2"
+            layout="@layout/intro_preview_cz_chip" />
+        <include
+            android:id="@id/preview_cz_look_3"
+            layout="@layout/intro_preview_cz_chip" />
+        <include
+            android:id="@id/preview_cz_look_4"
+            layout="@layout/intro_preview_cz_chip" />
+        <include
+            android:id="@id/preview_cz_look_5"
+            layout="@layout/intro_preview_cz_chip" />
+    </LinearLayout>
+    <FrameLayout
+        android:id="@id/preview_cz_tint"
+        android:layout_width="fill_parent"
+        android:layout_height="10.0dip"
+        android:layout_marginTop="7.0dip"
+        android:alpha="0.0">
+        <View
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/intro_preview_cz_hue"
+            android:layout_width="fill_parent"
+            android:layout_height="7.0dip" />
+        <View
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/intro_preview_cz_knob"
+            android:layout_width="10.0dip"
+            android:layout_height="10.0dip"
+            android:layout_marginStart="68.0dip" />
+    </FrameLayout>
+</LinearLayout>

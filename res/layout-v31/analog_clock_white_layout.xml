@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cc="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="120.0dip"
+        android:layout_height="120.0dip">
+        <desktop.widgets.SafeAnalogClock
+            android:id="@id/analog_clock"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:dial="@drawable/clock_face"
+            android:hand_hour="@drawable/hour_face"
+            android:hand_minute="@drawable/minute_face"
+            android:hand_second="@drawable/second_face" />
+        <CustomTextClock.TextClock
+            android:textSize="11.0sp"
+            android:textColor="@android:color/black"
+            android:id="@id/week_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_alignTop="@id/analog_clock"
+            android:layout_centerHorizontal="true"
+            android:alpha="5.0"
+            android:fontFamily="\@fonts/roboto_bold"
+            cc:format12Hour="EE d"
+            cc:format24Hour="EE d" />
+    </RelativeLayout>
+</RelativeLayout>

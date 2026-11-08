@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layoutDirection="ltr"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@id/rl_main"
+        android:background="@drawable/mint_rounded_corner_bg"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:layout_width="210.0dip"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/activity_horizontal_margin"
+        android:paddingVertical="@dimen/activity_horizontal_margin">
+        <ProgressBar
+            android:id="@id/roundProgressBar"
+            android:layout_width="60.0dip"
+            android:layout_height="60.0dip"
+            android:max="100"
+            android:progress="60"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/circular_progress_drawable"
+            android:rotation="270.0"
+            style="?android:progressBarStyleHorizontal" />
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/normal_margin">
+            <TextView
+                android:textSize="14.0sp"
+                android:textStyle="bold"
+                android:textColor="#ff3b4674"
+                android:gravity="center"
+                android:id="@id/tv_battery_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="55%" />
+            <TextView
+                android:textSize="14.0sp"
+                android:textStyle="bold"
+                android:textColor="#ff3b4674"
+                android:id="@id/tv_battery_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/charging" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

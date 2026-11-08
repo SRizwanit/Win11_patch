@@ -1,0 +1,88 @@
+.class public final synthetic Lho6;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic q:B
+
+.field public final synthetic r:Lcn6;
+
+.field public final synthetic s:Ljava/lang/String;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcn6;Ljava/lang/String;B)V
+    .locals 0
+
+    .line 1
+    iput-byte p3, p0, Lho6;->q:B
+
+    iput-object p1, p0, Lho6;->r:Lcn6;
+
+    iput-object p2, p0, Lho6;->s:Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 2
+
+    .line 1
+    iget-byte v0, p0, Lho6;->q:B
+
+    .line 3
+    iget-object v1, p0, Lho6;->s:Ljava/lang/String;
+
+    .line 5
+    iget-object p0, p0, Lho6;->r:Lcn6;
+
+    .line 7
+    packed-switch v0, :pswitch_data_0
+
+    .line 10
+    iget-object p0, p0, Lcn6;->t:Ljava/lang/Object;
+
+    .line 12
+    check-cast p0, Lks6;
+
+    .line 14
+    iget-object p0, p0, Lks6;->c:Ljava/util/concurrent/ConcurrentHashMap;
+
+    .line 16
+    invoke-virtual {p0, v1}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 19
+    return-void
+
+    .line 20
+    :pswitch_0
+    iget-object p0, p0, Lcn6;->t:Ljava/lang/Object;
+
+    .line 22
+    check-cast p0, Lks6;
+
+    .line 24
+    iget-object p0, p0, Lks6;->c:Ljava/util/concurrent/ConcurrentHashMap;
+
+    .line 26
+    invoke-virtual {p0, v1}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 29
+    return-void
+
+    nop
+
+    .line 31
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method

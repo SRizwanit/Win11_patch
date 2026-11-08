@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@id/rl_titleBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin">
+            <ImageView
+                android:id="@id/iv_back"
+                android:padding="@dimen/medium_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/medium_margin"
+                android:src="@drawable/ic_arrow_back" />
+            <TextView
+                android:textSize="20.0sp"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:text="@string/weather_settings" />
+        </LinearLayout>
+        <TextView
+            android:textSize="16.0sp"
+            android:textColor="@color/light_gray_text_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:text="@string/current_location"
+            android:drawableLeft="@drawable/gps_icon"
+            android:drawablePadding="@dimen/normal_margin" />
+        <RelativeLayout
+            android:background="@drawable/rounded_blue_rectangle"
+            android:layout_width="fill_parent"
+            android:layout_height="60.0dip"
+            android:layout_margin="@dimen/activity_horizontal_margin">
+            <TextView
+                android:textColor="@android:color/white"
+                android:id="@id/tv_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:text="N/A"
+                android:layout_centerVertical="true" />
+            <TextView
+                android:textColor="@android:color/white"
+                android:id="@id/tv_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:text="N/A"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+            <ImageView
+                android:id="@id/iv_weather_icon"
+                android:layout_width="30.0dip"
+                android:layout_height="30.0dip"
+                android:src="@drawable/sunny_light_color"
+                android:layout_toLeftOf="@id/tv_temp"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin">
+            <TextView
+                android:textSize="16.0sp"
+                android:textColor="@color/dark_gray_text_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temperature_unit"
+                android:drawableLeft="@drawable/temperature_icon"
+                android:drawablePadding="@dimen/normal_margin"
+                android:layout_centerVertical="true" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="60.0dip"
+                android:layout_height="90.0dip"
+                android:layout_alignParentRight="true">
+                <TextView
+                    android:textSize="18.0sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center"
+                    android:id="@id/tv_celsius"
+                    android:background="@drawable/blue_top_rounded_corner"
+                    android:layout_width="60.0dip"
+                    android:layout_height="45.0dip"
+                    android:text="ºC" />
+                <TextView
+                    android:textSize="18.0sp"
+                    android:gravity="center"
+                    android:id="@id/tv_fahrenheit"
+                    android:background="@drawable/gray_bottom_rounded_corner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45.0dip"
+                    android:text="ºF" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:id="@id/ll_get_location"
+        android:background="@drawable/rounded_gray_rectangle"
+        android:layout_width="fill_parent"
+        android:layout_height="60.0dip"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/widget_size_160_height"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:textSize="16.0sp"
+            android:textColor="@color/app_txt_colr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/update_weather_location"
+            android:drawableLeft="@drawable/location_icon"
+            android:drawablePadding="@dimen/normal_margin" />
+    </LinearLayout>
+</RelativeLayout>

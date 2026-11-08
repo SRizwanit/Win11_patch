@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector
+    android:height="48.0dip"
+    android:width="48.0dip"
+    android:viewportWidth="48.0"
+    android:viewportHeight="48.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <path
+        android:fillColor="@drawable/$widgets_desktop_icon__0"
+        android:pathData="M9,5h11a4,4 0 0 1 4,4v11a4,4 0 0 1 -4,4h-11a4,4 0 0 1 -4,-4v-11a4,4 0 0 1 4,-4z" />
+    <path
+        android:fillColor="@drawable/$widgets_desktop_icon__1"
+        android:pathData="M9,27h11a4,4 0 0 1 4,4v8a4,4 0 0 1 -4,4h-11a4,4 0 0 1 -4,-4v-8a4,4 0 0 1 4,-4z" />
+    <path
+        android:fillColor="@drawable/$widgets_desktop_icon__2"
+        android:pathData="M31,27h8a4,4 0 0 1 4,4v8a4,4 0 0 1 -4,4h-8a4,4 0 0 1 -4,-4v-8a4,4 0 0 1 4,-4z" />
+    <path
+        android:fillColor="@drawable/$widgets_desktop_icon__3"
+        android:pathData="M35,3.3l7.2,7.2a3,3 0 0 1 0,4.2l-7.2,7.2a3,3 0 0 1 -4.2,0l-7.2,-7.2a3,3 0 0 1 0,-4.2l7.2,-7.2a3,3 0 0 1 4.2,0z" />
+</vector>

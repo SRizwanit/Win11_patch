@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@android:color/black"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@id/iv_wallpaper_preview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop" />
+    <desktop.CustomViews.ParallaxView
+        android:id="@id/parallax_view"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <desktop.CustomViews.VideoWallpaperView
+        android:id="@id/video_wallpaper_view"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <desktop.CustomViews.ThreeDWallpaperView
+        android:id="@id/threed_wallpaper_view"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <FrameLayout
+        android:id="@id/fl_top_insets"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+        <ImageView
+            android:layout_gravity="start"
+            android:id="@id/iv_back_detail"
+            android:padding="8.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16.0dip"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_marginStart="16.0dip"
+            app:tint="@android:color/white" />
+        <LinearLayout
+            android:layout_gravity="end"
+            android:orientation="horizontal"
+            android:id="@id/ll_wallpaper_toggle"
+            android:background="@drawable/bg_wallpaper_toggle_container"
+            android:padding="4.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16.0dip"
+            android:layout_marginEnd="16.0dip">
+            <TextView
+                android:textSize="12.0sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:id="@id/tv_option_fixed"
+                android:background="@null"
+                android:paddingLeft="12.0dip"
+                android:paddingTop="6.0dip"
+                android:paddingRight="12.0dip"
+                android:paddingBottom="6.0dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wallpaper_fixed"
+                android:paddingHorizontal="12.0dip"
+                android:paddingVertical="6.0dip" />
+            <TextView
+                android:textSize="12.0sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:id="@id/tv_option_scrollable"
+                android:background="@drawable/bg_wallpaper_toggle_selected"
+                android:paddingLeft="12.0dip"
+                android:paddingTop="6.0dip"
+                android:paddingRight="12.0dip"
+                android:paddingBottom="6.0dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wallpaper_scrollable"
+                android:paddingHorizontal="12.0dip"
+                android:paddingVertical="6.0dip" />
+        </LinearLayout>
+    </FrameLayout>
+    <View
+        android:background="@drawable/gradient_overlay_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="200.0dip"
+        android:layout_alignParentBottom="true" />
+    <FrameLayout
+        android:id="@id/fl_bottom_insets"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="24.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24.0dip">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="24.0sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:id="@id/tv_wallpaper_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textSize="14.0sp"
+                        android:textColor="#ffe0e0e0"
+                        android:id="@id/tv_wallpaper_meta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4.0dip" />
+                </LinearLayout>
+                <ImageView
+                    android:id="@id/iv_share"
+                    android:padding="8.0dip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_share"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    app:tint="@android:color/white" />
+            </RelativeLayout>
+            <Button
+                android:textSize="18.0sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:id="@id/btn_apply"
+                android:layout_width="fill_parent"
+                android:layout_height="56.0dip"
+                android:text="@string/apply"
+                android:textAllCaps="false"
+                android:backgroundTint="#ff0084ff"
+                app:cornerRadius="28.0dip" />
+        </LinearLayout>
+    </FrameLayout>
+    <ProgressBar
+        android:id="@id/progressBarDetail"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+</RelativeLayout>

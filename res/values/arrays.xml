@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="change_app_life_at_glance_options">
+        <item>@string/open</item>
+        <item>@string/change_app</item>
+    </string-array>
+    <array name="change_app_life_at_glance_popup_img_options">
+        <item>@drawable/open_app</item>
+        <item>@drawable/change_app</item>
+    </array>
+    <array name="change_app_popup_img_options">
+        <item>@drawable/open_app</item>
+        <item>@drawable/change_app</item>
+        <item>@drawable/pin_app</item>
+    </array>
+    <string-array name="change_app_taskbar_options">
+        <item>@string/open</item>
+        <item>@string/change_app</item>
+        <item>@string/unpin_app</item>
+    </string-array>
+    <string-array name="colors">
+        <item>ffb900</item>
+        <item>ff8c00</item>
+        <item>f7630c</item>
+        <item>ca5010</item>
+        <item>da3b01</item>
+        <item>ef6950</item>
+        <item>d13438</item>
+        <item>ff4343</item>
+        <item>e74856</item>
+        <item>e81123</item>
+        <item>ea005e</item>
+        <item>c30052</item>
+        <item>e3008c</item>
+        <item>bf0077</item>
+        <item>c239b3</item>
+        <item>9a0089</item>
+        <item>0078d7</item>
+        <item>0063b1</item>
+        <item>8e8cd8</item>
+        <item>6b69d6</item>
+        <item>8764b8</item>
+        <item>744da9</item>
+        <item>b146c2</item>
+        <item>881798</item>
+        <item>0099bc</item>
+        <item>2d7d9a</item>
+        <item>00b7c3</item>
+        <item>038387</item>
+        <item>00b294</item>
+        <item>018574</item>
+        <item>00cc6a</item>
+        <item>10893e</item>
+        <item>7a7574</item>
+        <item>5d5a58</item>
+        <item>68768a</item>
+        <item>515c6b</item>
+        <item>567c73</item>
+        <item>486860</item>
+        <item>498205</item>
+        <item>107c10</item>
+        <item>767676</item>
+        <item>4c4a48</item>
+        <item>69797e</item>
+        <item>4a5459</item>
+        <item>647c64</item>
+        <item>525e54</item>
+        <item>847545</item>
+        <item>7e735f</item>
+    </string-array>
+    <string-array name="date_formats">
+        <item>dd/MM/yyyy</item>
+        <item>dd/MM/yy</item>
+        <item>d/M/yyyy</item>
+        <item>d/M/yy</item>
+        <item>yy/MM/dd</item>
+        <item>yyyy/MM/dd</item>
+        <item>yyyy-MM-dd</item>
+        <item>dd-MMM-yy</item>
+        <item>MM/dd/yyyy</item>
+    </string-array>
+    <array name="desktop_menu_img">
+        <item>@drawable/theme_icon_pack</item>
+        <item>@drawable/colors_icon</item>
+        <item>@drawable/change_bg</item>
+        <item>@drawable/gallery_icon</item>
+        <item>@drawable/widget_icon</item>
+        <item>@drawable/tiles_colors</item>
+        <item>@drawable/add_page</item>
+        <item>@drawable/remove_page</item>
+        <item>@drawable/desktop_icon</item>
+        <item>@drawable/auto_arrange</item>
+        <item>@drawable/settings_icon</item>
+    </array>
+    <string-array name="desktop_menu_title">
+        <item>@string/theme1</item>
+        <item>@string/colors</item>
+        <item>@string/wallpapers</item>
+        <item>@string/gallery</item>
+        <item>@string/widgets</item>
+        <item>@string/tile_style</item>
+        <item>@string/add_page</item>
+        <item>@string/remove_page</item>
+        <item>@string/desktop_icons</item>
+        <item>@string/auto_arrange</item>
+        <item>@string/settings_launcher</item>
+    </string-array>
+    <array name="folder_imgs">
+        <item>@drawable/dir_icon</item>
+        <item>@drawable/contact_folder</item>
+        <item>@drawable/folder_01</item>
+        <item>@drawable/folder_02</item>
+        <item>@drawable/folder_03</item>
+        <item>@drawable/videos_folder</item>
+        <item>@drawable/folder_05</item>
+        <item>@drawable/folder_06</item>
+        <item>@drawable/folder_07</item>
+        <item>@drawable/folder_08</item>
+        <item>@drawable/folder_09</item>
+        <item>@drawable/download_folder</item>
+        <item>@drawable/folder_11</item>
+        <item>@drawable/folder_12</item>
+        <item>@drawable/folder_13</item>
+        <item>@drawable/folder_14</item>
+        <item>@drawable/folder_15</item>
+        <item>@drawable/folder_16</item>
+    </array>
+    <string-array name="folder_imgs_name">
+        <item>@string/dir_icon</item>
+        <item>@string/contact_folder</item>
+        <item>@string/folder_01</item>
+        <item>@string/folder_02</item>
+        <item>@string/folder_03</item>
+        <item>@string/videos_folder</item>
+        <item>@string/folder_05</item>
+        <item>@string/folder_06</item>
+        <item>@string/folder_07</item>
+        <item>@string/folder_08</item>
+        <item>@string/folder_09</item>
+        <item>@string/download_folder</item>
+        <item>@string/folder_11</item>
+        <item>@string/folder_12</item>
+        <item>@string/folder_13</item>
+        <item>@string/folder_14</item>
+        <item>@string/folder_15</item>
+        <item>@string/folder_16</item>
+    </string-array>
+    <array name="function_imgs">
+        <item>@drawable/do_nothing</item>
+        <item>@drawable/app_drawer</item>
+        <item>@drawable/action_center_icon</item>
+        <item>@drawable/system_settings</item>
+        <item>@drawable/launcher_settings</item>
+        <item>@drawable/expand_statusbar</item>
+        <item>@drawable/search_icon</item>
+        <item>@drawable/voice_icon</item>
+        <item>@drawable/lock_screen_icon</item>
+        <item>@drawable/power_black_icon</item>
+        <item>@drawable/screenshot_icon</item>
+    </array>
+    <string-array name="functions_array">
+        <item>Do nothing</item>
+        <item>Open app drawer</item>
+        <item>Open action center</item>
+        <item>Open system settings</item>
+        <item>Open launcher settings</item>
+        <item>Expand status bar</item>
+        <item>Google search</item>
+        <item>Google voice search</item>
+        <item>Lock screen</item>
+        <item>Power off</item>
+        <item>Screenshot</item>
+    </string-array>
+    <string-array name="gestures_array">
+        <item>Swipe down</item>
+        <item>Swipe up</item>
+        <item>Pinch in</item>
+        <item>Pinch out</item>
+        <item>Double tap</item>
+        <item>Swipe down (two fingers)</item>
+        <item>Swipe up (two fingers)</item>
+    </string-array>
+    <array name="gestures_imgs">
+        <item>@drawable/swipe_down</item>
+        <item>@drawable/swipe_up</item>
+        <item>@drawable/pinch_in</item>
+        <item>@drawable/pinch_out</item>
+        <item>@drawable/double_tap</item>
+        <item>@drawable/double_swipe_down</item>
+        <item>@drawable/double_swipe_up</item>
+    </array>
+    <string-array name="goto_locations">
+        <item>Loading…</item>
+        <item>Home Folder</item>
+        <item>SD Card</item>
+        <item>Downloads</item>
+        <item>DCIM</item>
+        <item>Bookmarks…</item>
+        <item>Other…</item>
+    </string-array>
+    <string-array name="life_at_glance_colors">
+        <item>0078d7</item>
+        <item>ff0099cc</item>
+        <item>ee007c00</item>
+        <item>ee003ebb</item>
+        <item>ffffff</item>
+        <item>ffff8800</item>
+        <item>3B5998</item>
+        <item>36bd49</item>
+    </string-array>
+    <array name="life_at_glance_icons">
+        <item>@drawable/transparent</item>
+        <item>@drawable/gmail_icon</item>
+        <item>@drawable/play_store</item>
+        <item>@drawable/camera_icon</item>
+        <item>@drawable/skype</item>
+        <item>@drawable/album_icon</item>
+        <item>@drawable/facebook</item>
+        <item>@drawable/whatsapps</item>
+    </array>
+    <array name="long_click_app_imgs">
+        <item>@drawable/remove</item>
+        <item>@drawable/store_icon</item>
+        <item>@drawable/show_icon</item>
+        <item>@drawable/pin</item>
+        <item>@drawable/info_icon</item>
+        <item>@drawable/transparent_taskbar</item>
+    </array>
+    <string-array name="long_click_app_options">
+        <item>@string/uninstall</item>
+        <item>@string/create_shortcut</item>
+        <item>@string/hide_app</item>
+        <item>@string/lock_app</item>
+        <item>@string/properties</item>
+        <item>@string/pin_taskbar_app</item>
+    </string-array>
+    <array name="more_popup_all_img_options">
+        <item>@drawable/select_all</item>
+        <item>@drawable/list</item>
+        <item>@drawable/compress</item>
+        <item>@drawable/decompress</item>
+        <item>@drawable/share_icon</item>
+        <item>@drawable/shortcut</item>
+    </array>
+    <string-array name="more_popup_all_options">
+        <item>@string/select_all</item>
+        <item>@string/list_view</item>
+        <item>@string/compress</item>
+        <item>@string/decompress</item>
+        <item>@string/share</item>
+        <item>@string/create_shortcut</item>
+    </string-array>
+    <array name="more_popup_hidden_img_grid_options">
+        <item>@drawable/select_all</item>
+        <item>@drawable/grid</item>
+    </array>
+    <array name="more_popup_hidden_img_list_options">
+        <item>@drawable/select_all</item>
+        <item>@drawable/list</item>
+    </array>
+    <string-array name="more_popup_hidden_options">
+        <item>@string/compress</item>
+        <item>@string/decompress</item>
+    </string-array>
+    <array name="power_popup_img_options">
+        <item>@drawable/power_black_icon</item>
+        <item>@drawable/close_icon</item>
+        <item>@drawable/restart_icon</item>
+    </array>
+    <string-array name="power_popup_options">
+        <item>@string/power</item>
+        <item>@string/close_launcher</item>
+        <item>@string/restart_launcher</item>
+    </string-array>
+    <array name="recent_apps_popup_img_options">
+        <item>@drawable/open_app</item>
+        <item>@drawable/disable_app</item>
+        <item>@drawable/remove_all</item>
+    </array>
+    <string-array name="recent_apps_popup_options">
+        <item>@string/open</item>
+        <item>@string/disable_recents</item>
+        <item>@string/remove_all</item>
+    </string-array>
+    <string-array name="settings_main_options">
+        <item>@string/personalization</item>
+        <item>@string/security</item>
+        <item>@string/system</item>
+        <item>@string/apps</item>
+        <item>@string/advance_features</item>
+        <item>@string/backup_restore</item>
+        <item>@string/rewards</item>
+    </string-array>
+    <array name="settings_main_options_normal_imgs">
+        <item>@drawable/personalization</item>
+        <item>@drawable/security</item>
+        <item>@drawable/settings_icon</item>
+        <item>@drawable/apps</item>
+        <item>@drawable/advanced_feature</item>
+        <item>@drawable/backup_restore_icon</item>
+        <item>@drawable/ic_rewards</item>
+    </array>
+</resources>

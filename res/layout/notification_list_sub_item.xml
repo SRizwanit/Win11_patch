@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View
+        android:id="@id/divider_line"
+        android:background="@color/transparentFullWhite"
+        android:layout_width="fill_parent"
+        android:layout_height="10.0dip" />
+    <RelativeLayout
+        android:background="@drawable/noti_item_rounded_bg"
+        android:padding="10.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@id/arrow_iv"
+            android:paddingLeft="@dimen/medium_margin"
+            android:paddingRight="@dimen/medium_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/medium_margin"
+            android:src="@drawable/down_arrow_white"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/medium_margin" />
+        <TextView
+            android:textSize="15.0sp"
+            android:textColor="@android:color/white"
+            android:id="@id/tv_app_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/medium_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:text="@string/sound"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:layout_toLeftOf="@id/arrow_iv"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_toStartOf="@id/arrow_iv" />
+        <TextView
+            android:textSize="14.0sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:id="@id/tv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:text="@string/sound"
+            android:layout_toLeftOf="@id/civ_senderIcon"
+            android:layout_below="@id/tv_app_title"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_toStartOf="@id/civ_senderIcon"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:textSize="14.0sp"
+            android:textColor="@android:color/white"
+            android:id="@id/sub_tv_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_marginRight="@dimen/medium_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:text="@string/sound"
+            android:maxLines="8"
+            android:layout_below="@id/tv_text"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_alignParentStart="true" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@id/civ_senderIcon"
+            android:layout_width="40.0dip"
+            android:layout_height="40.0dip"
+            android:layout_marginTop="25.0dip"
+            android:src="@drawable/profile_icon"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <ImageView
+            android:id="@id/notification_picture"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:layout_below="@id/sub_tv_text" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@id/notification_top_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/notification_picture">
+            <RelativeLayout
+                android:orientation="vertical"
+                android:id="@id/notification_material_reply_container"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip">
+                <EditText
+                    android:textSize="15.0sp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/gray_transparent"
+                    android:id="@id/ed_reply"
+                    android:background="@drawable/reply_bg"
+                    android:padding="10.0dip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50.0dip"
+                    android:hint="@string/reply"
+                    android:singleLine="true"
+                    android:imeOptions="actionSend" />
+                <ImageView
+                    android:id="@id/iv_send_reply"
+                    android:layout_width="30.0dip"
+                    android:layout_height="30.0dip"
+                    android:layout_marginRight="@dimen/normal_margin"
+                    android:src="@drawable/send_reply_iv"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/normal_margin"
+                    android:layout_alignParentEnd="true"
+                    app:tint="@color/blue_btn_bg" />
+            </RelativeLayout>
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@id/notification_action_container"
+                android:paddingTop="10.0dip"
+                android:paddingBottom="5.0dip"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

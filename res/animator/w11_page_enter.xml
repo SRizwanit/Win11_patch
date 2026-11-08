@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set
+    android:ordering="together"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <objectAnimator
+        android:interpolator="@interpolator/w11_decelerate"
+        android:duration="@integer/w11_duration_normal"
+        android:valueFrom="32.0dip"
+        android:valueTo="0.0dip"
+        android:valueType="floatType"
+        android:propertyName="translationY" />
+    <objectAnimator
+        android:interpolator="@interpolator/w11_decelerate"
+        android:duration="@integer/w11_duration_fast"
+        android:valueFrom="0.0"
+        android:valueTo="1.0"
+        android:valueType="floatType"
+        android:propertyName="alpha" />
+</set>

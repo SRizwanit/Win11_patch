@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@id/rowbg"
+    android:background="@drawable/panel_front_rounded"
+    android:padding="6.0dip"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:listPreferredItemHeight"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@id/explorer_resIcon"
+        android:layout_width="50.0dip"
+        android:layout_height="fill_parent"
+        android:src="@drawable/filetype_generic"
+        android:scaleType="centerInside"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+    <TextView
+        android:textColor="@android:color/black"
+        android:ellipsize="marquee"
+        android:id="@id/explorer_resMeta"
+        android:layout_width="fill_parent"
+        android:layout_height="26.0dip"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:singleLine="true"
+        android:layout_toRightOf="@id/explorer_resIcon"
+        android:layout_alignParentBottom="true" />
+    <TextView
+        android:textColor="@android:color/black"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical"
+        android:id="@id/explorer_resName"
+        android:paddingLeft="5.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:includeFontPadding="true"
+        android:layout_toLeftOf="@id/file_checkbox"
+        android:layout_toRightOf="@id/explorer_resIcon"
+        android:layout_above="@id/explorer_resMeta"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true" />
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@id/file_checkbox"
+        android:padding="5.0dip"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="14.0dip"
+        android:layout_alignParentRight="true"
+        app:buttonTint="@android:color/black" />
+</RelativeLayout>

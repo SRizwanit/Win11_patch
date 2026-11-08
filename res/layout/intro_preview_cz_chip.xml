@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_width="0.0dip"
+    android:layout_height="wrap_content"
+    android:layout_weight="1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout
+        android:background="@drawable/intro_preview_cz_swatch"
+        android:layout_width="27.0dip"
+        android:layout_height="27.0dip">
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@id/preview_cz_chip_icon"
+            android:layout_width="21.0dip"
+            android:layout_height="21.0dip"
+            android:scaleType="fitCenter"
+            android:contentDescription="@null" />
+    </FrameLayout>
+    <TextView
+        android:textSize="7.0sp"
+        android:id="@id/preview_cz_chip_label"
+        android:paddingTop="2.0dip"
+        android:paddingBottom="2.0dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3.0dip"
+        android:maxLines="1"
+        android:includeFontPadding="false"
+        android:paddingStart="4.0dip"
+        android:paddingEnd="4.0dip" />
+</LinearLayout>

@@ -1,0 +1,1 @@
+ALTER TABLE ViewItemDB ADD COLUMN rename TEXT;

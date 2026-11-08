@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:id="@id/sv_advance_feature"
+    android:scrollbars="none"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="@dimen/normal_margin"
+    android:layout_marginRight="@dimen/normal_margin"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@id/ll_advance_feature"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:id="@id/ll_gesture_settings"
+            android:background="@drawable/ripple_quick_access_item_bg"
+            android:padding="@dimen/margin_15dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="@android:color/black"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:text="@string/gestures"
+                android:drawablePadding="@dimen/normal_margin"
+                android:layout_weight="1.0"
+                app:drawableLeftCompat="@drawable/gesture" />
+            <ImageView
+                android:id="@id/iv_pro_gesture_settings"
+                android:layout_width="32.0dip"
+                android:layout_height="16.0dip"
+                android:src="@drawable/pro_mini"
+                android:layout_marginEnd="8.0dip" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@id/ll_blur_enabled"
+            android:padding="@dimen/margin_15dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="@android:color/black"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enable_blur"
+                android:drawableLeft="@drawable/blur_icon"
+                android:drawablePadding="@dimen/normal_margin" />
+            <ToggleButton
+                android:id="@id/cb_blur_enabled"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/settings_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:button="@drawable/toggle_selector"
+                android:textOn=""
+                android:textOff=""
+                android:minWidth="0.0dip"
+                android:minHeight="0.0dip" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="@dimen/margin_15dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="@android:color/black"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enable_cortana"
+                android:drawableLeft="@drawable/cortana_settings"
+                android:drawablePadding="@dimen/normal_margin" />
+            <ToggleButton
+                android:id="@id/cb_cortana_enabled"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/settings_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:button="@drawable/toggle_selector"
+                android:textOn=""
+                android:textOff=""
+                android:minWidth="0.0dip"
+                android:minHeight="0.0dip" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="@dimen/margin_15dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="14.0sp"
+                android:textColor="@android:color/black"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/transparent_taskbar"
+                android:drawableLeft="@drawable/transparent_taskbar"
+                android:drawablePadding="@dimen/normal_margin" />
+            <ToggleButton
+                android:id="@id/cb_transparent_taskbar"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/settings_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:button="@drawable/toggle_selector"
+                android:textOn=""
+                android:textOff=""
+                android:minWidth="0.0dip"
+                android:minHeight="0.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:id="@id/ll_bg"
+        android:background="@drawable/white_rounded_bg_action_center"
+        android:layout_width="240.0dip"
+        android:layout_height="110.0dip">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_marginRight="@dimen/medium_margin">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@id/music_icon_iv"
+                android:layout_width="40.0dip"
+                android:layout_height="40.0dip"
+                app:shapeAppearanceOverlay="@style/roundedImageView" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/medium_margin">
+                <TextView
+                    android:textSize="12.0sp"
+                    android:textColor="@android:color/black"
+                    android:id="@id/music_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
+                <TextView
+                    android:textSize="12.0sp"
+                    android:textColor="@android:color/black"
+                    android:id="@id/tv_album_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin">
+            <TextView
+                android:textSize="10.0sp"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:id="@id/tv_progress"
+                android:layout_width="40.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:text="0:00"
+                android:layout_below="@id/media_seekbar" />
+            <SeekBar
+                android:id="@id/media_seekbar"
+                android:paddingTop="@dimen/thumb_left_right_margin"
+                android:paddingBottom="@dimen/thumb_left_right_margin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:layout_marginRight="@dimen/small_margin"
+                android:maxHeight="@dimen/small_margin"
+                android:progressDrawable="@drawable/progess_bar_bg"
+                android:minHeight="@dimen/small_margin"
+                android:thumb="@android:color/transparent" />
+            <TextView
+                android:textSize="10.0sp"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:id="@id/tv_duration"
+                android:layout_width="40.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/medium_margin"
+                android:text="0:00"
+                android:layout_below="@id/media_seekbar"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:id="@id/player_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@id/iv_rewind"
+                android:padding="@dimen/medium_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:src="@drawable/rewind" />
+            <ImageView
+                android:id="@id/iv_prev"
+                android:padding="@dimen/medium_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:src="@drawable/previous" />
+            <ImageView
+                android:id="@id/iv_play"
+                android:padding="@dimen/medium_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:src="@drawable/play" />
+            <ImageView
+                android:id="@id/iv_next"
+                android:padding="@dimen/medium_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:src="@drawable/next" />
+            <ImageView
+                android:id="@id/iv_forward"
+                android:padding="@dimen/medium_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:src="@drawable/forward" />
+            <ImageView
+                android:id="@id/iv_playlist"
+                android:padding="@dimen/medium_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/medium_margin"
+                android:src="@drawable/ic_playlist" />
+            <ImageView
+                android:id="@id/iv_folder"
+                android:padding="@dimen/medium_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_folder" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

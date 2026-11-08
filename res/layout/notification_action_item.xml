@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    android:textSize="15.0sp"
+    android:textStyle="bold"
+    android:textColor="@color/noti_action_text_color"
+    android:id="@id/actionBtn"
+    android:padding="@dimen/medium_margin"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="..."
+    android:textAllCaps="true"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

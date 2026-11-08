@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d new notifications</item>
+        <item quantity="one">%d new notification</item>
+    </plurals>
+    <plurals name="published_days_ago">
+        <item quantity="other">%d days ago</item>
+        <item quantity="one">%d day ago</item>
+    </plurals>
+    <plurals name="published_hours_ago">
+        <item quantity="other">%d hours ago</item>
+        <item quantity="one">%d hour ago</item>
+    </plurals>
+    <plurals name="published_minutes_ago">
+        <item quantity="other">%d minutes ago</item>
+        <item quantity="one">%d minute ago</item>
+    </plurals>
+    <plurals name="published_months_ago">
+        <item quantity="other">%d months ago</item>
+        <item quantity="one">%d month ago</item>
+    </plurals>
+    <plurals name="published_weeks_ago">
+        <item quantity="other">%d weeks ago</item>
+        <item quantity="one">%d week ago</item>
+    </plurals>
+    <plurals name="widget_moved_icons">
+        <item quantity="other">Moved %1$d icons to page %2$d to make room for the widget</item>
+        <item quantity="one">Moved %1$d icon to page %2$d to make room for the widget</item>
+    </plurals>
+</resources>

@@ -1,0 +1,223 @@
+.class public final Ldb1;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# instance fields
+.field public final a:[F
+
+.field public final b:[F
+
+.field public final c:Landroid/graphics/Matrix;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 3
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    const/4 v0, 0x2
+
+    .line 5
+    new-array v1, v0, [F
+
+    .line 7
+    iput-object v1, p0, Ldb1;->a:[F
+
+    .line 9
+    new-array v0, v0, [F
+
+    .line 11
+    iput-object v0, p0, Ldb1;->b:[F
+
+    .line 13
+    const/4 v1, 0x0
+
+    .line 14
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    .line 16
+    aput v2, v0, v1
+
+    .line 18
+    new-instance v0, Landroid/graphics/Matrix;
+
+    .line 20
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+
+    .line 23
+    iput-object v0, p0, Ldb1;->c:Landroid/graphics/Matrix;
+
+    .line 25
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(F)V
+    .locals 11
+
+    .line 1
+    iget-object v0, p0, Ldb1;->b:[F
+
+    .line 3
+    const/4 v1, 0x1
+
+    .line 4
+    aget v2, v0, v1
+
+    .line 6
+    float-to-double v2, v2
+
+    .line 7
+    const/4 v4, 0x0
+
+    .line 8
+    aget v0, v0, v4
+
+    .line 10
+    float-to-double v5, v0
+
+    .line 11
+    invoke-static {v2, v3, v5, v6}, Ljava/lang/Math;->atan2(DD)D
+
+    .line 14
+    move-result-wide v2
+
+    .line 15
+    const-wide v5, 0x3ff921fb54442d18L    # 1.5707963267948966
+
+    .line 20
+    add-double/2addr v2, v5
+
+    .line 21
+    double-to-float v0, v2
+
+    .line 22
+    iget-object p0, p0, Ldb1;->a:[F
+
+    .line 24
+    aget v2, p0, v4
+
+    .line 26
+    float-to-double v2, v2
+
+    .line 27
+    float-to-double v5, p1
+
+    .line 28
+    float-to-double v7, v0
+
+    .line 29
+    invoke-static {v7, v8}, Ljava/lang/Math;->cos(D)D
+
+    .line 32
+    move-result-wide v9
+
+    .line 33
+    mul-double/2addr v9, v5
+
+    .line 34
+    add-double/2addr v9, v2
+
+    .line 35
+    double-to-float p1, v9
+
+    .line 36
+    aput p1, p0, v4
+
+    .line 38
+    aget p1, p0, v1
+
+    .line 40
+    float-to-double v2, p1
+
+    .line 41
+    invoke-static {v7, v8}, Ljava/lang/Math;->sin(D)D
+
+    .line 44
+    move-result-wide v7
+
+    .line 45
+    mul-double/2addr v7, v5
+
+    .line 46
+    add-double/2addr v7, v2
+
+    .line 47
+    double-to-float p1, v7
+
+    .line 48
+    aput p1, p0, v1
+
+    .line 50
+    return-void
+.end method
+
+.method public final b()V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Ldb1;->a:[F
+
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([FF)V
+
+    .line 7
+    iget-object v0, p0, Ldb1;->b:[F
+
+    .line 9
+    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([FF)V
+
+    .line 12
+    const/4 v1, 0x0
+
+    .line 13
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    .line 15
+    aput v2, v0, v1
+
+    .line 17
+    iget-object p0, p0, Ldb1;->c:Landroid/graphics/Matrix;
+
+    .line 19
+    invoke-virtual {p0}, Landroid/graphics/Matrix;->reset()V
+
+    .line 22
+    return-void
+.end method
+
+.method public final c(F)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Ldb1;->c:Landroid/graphics/Matrix;
+
+    .line 3
+    invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
+
+    .line 6
+    invoke-virtual {v0, p1}, Landroid/graphics/Matrix;->setRotate(F)V
+
+    .line 9
+    iget-object p1, p0, Ldb1;->a:[F
+
+    .line 11
+    invoke-virtual {v0, p1}, Landroid/graphics/Matrix;->mapPoints([F)V
+
+    .line 14
+    iget-object p0, p0, Ldb1;->b:[F
+
+    .line 16
+    invoke-virtual {v0, p0}, Landroid/graphics/Matrix;->mapPoints([F)V
+
+    .line 19
+    return-void
+.end method

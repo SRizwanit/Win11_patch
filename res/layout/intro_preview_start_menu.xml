@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_gravity="start|bottom|center"
+    android:orientation="horizontal"
+    android:id="@id/preview_start_menu"
+    android:background="@drawable/intro_preview_panel"
+    android:visibility="gone"
+    android:layout_width="190.0dip"
+    android:layout_height="330.0dip"
+    android:layout_marginBottom="3.0dip"
+    android:layout_marginStart="3.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="10.0dip"
+        android:paddingBottom="10.0dip"
+        android:layout_width="22.0dip"
+        android:layout_height="fill_parent">
+        <ImageView
+            android:src="@drawable/menu"
+            android:contentDescription="@null"
+            style="@style/IntroPreviewSmRail" />
+        <Space
+            android:layout_width="1.0dip"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0" />
+        <ImageView
+            android:src="@drawable/search"
+            android:contentDescription="@null"
+            style="@style/IntroPreviewSmRail" />
+        <ImageView
+            android:src="@drawable/roundicon"
+            android:contentDescription="@null"
+            style="@style/IntroPreviewSmRail" />
+        <ImageView
+            android:src="@drawable/file_explorer"
+            android:contentDescription="@null"
+            style="@style/IntroPreviewSmRail" />
+        <ImageView
+            android:src="@drawable/settings"
+            android:contentDescription="@null"
+            style="@style/IntroPreviewSmRail" />
+        <ImageView
+            android:layout_marginBottom="0.0dip"
+            android:src="@drawable/power"
+            android:contentDescription="@null"
+            style="@style/IntroPreviewSmRail" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingTop="10.0dip"
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.0"
+        android:paddingEnd="6.0dip">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="16.0dip">
+            <ImageView
+                android:layout_width="9.0dip"
+                android:layout_height="9.0dip"
+                android:src="@drawable/search"
+                android:contentDescription="@null" />
+            <TextView
+                android:textSize="7.0sp"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search"
+                android:includeFontPadding="false"
+                android:layout_marginStart="4.0dip" />
+        </LinearLayout>
+        <include
+            android:id="@id/preview_sm_app_1"
+            layout="@layout/intro_preview_sm_app" />
+        <include
+            android:id="@id/preview_sm_app_2"
+            layout="@layout/intro_preview_sm_app" />
+        <include
+            android:id="@id/preview_sm_app_3"
+            layout="@layout/intro_preview_sm_app" />
+        <include
+            android:id="@id/preview_sm_app_4"
+            layout="@layout/intro_preview_sm_app" />
+        <include
+            android:id="@id/preview_sm_app_5"
+            layout="@layout/intro_preview_sm_app" />
+        <include
+            android:id="@id/preview_sm_app_6"
+            layout="@layout/intro_preview_sm_app" />
+        <include
+            android:id="@id/preview_sm_app_7"
+            layout="@layout/intro_preview_sm_app" />
+        <include
+            android:id="@id/preview_sm_app_8"
+            layout="@layout/intro_preview_sm_app" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingTop="10.0dip"
+        android:layout_width="94.0dip"
+        android:layout_height="fill_parent"
+        android:paddingEnd="6.0dip">
+        <TextView
+            android:textSize="7.0sp"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/intro_preview_life_at_a_glance"
+            android:includeFontPadding="false" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip">
+            <include
+                android:id="@id/preview_sm_tile_1"
+                layout="@layout/intro_preview_sm_tile" />
+            <include
+                android:id="@id/preview_sm_tile_2"
+                layout="@layout/intro_preview_sm_tile" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <include
+                android:id="@id/preview_sm_tile_3"
+                layout="@layout/intro_preview_sm_tile" />
+            <include
+                android:id="@id/preview_sm_tile_4"
+                layout="@layout/intro_preview_sm_tile" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <include
+                android:id="@id/preview_sm_tile_5"
+                layout="@layout/intro_preview_sm_tile" />
+            <include
+                android:id="@id/preview_sm_tile_6"
+                layout="@layout/intro_preview_sm_tile" />
+        </LinearLayout>
+        <TextView
+            android:textSize="7.0sp"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8.0dip"
+            android:text="@string/intro_preview_play_and_explore"
+            android:includeFontPadding="false" />
+    </LinearLayout>
+</LinearLayout>

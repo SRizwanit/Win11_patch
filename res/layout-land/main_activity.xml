@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@id/rl_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@id/iv_background"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="matrix" />
+    <desktop.CustomViews.ParallaxView
+        android:id="@id/parallax_view"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <desktop.CustomViews.VideoWallpaperView
+        android:id="@id/video_wallpaper_view"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <desktop.CustomViews.ThreeDWallpaperView
+        android:id="@id/threed_wallpaper_view"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <RelativeLayout
+        android:id="@id/rl_main_activity"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/bottom_layer"
+            android:layout_alignParentTop="true">
+            <RelativeLayout
+                android:orientation="vertical"
+                android:id="@id/rl_viewpager"
+                android:paddingLeft="@dimen/medium_margin"
+                android:paddingRight="@dimen/medium_margin"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <com.centsol.w10launcher.util.CustomViewPager
+                    android:id="@id/view_pager_desktop"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_above="@id/pageIndicatorView" />
+                <desktop.CustomViews.TopViewDrawing
+                    android:id="@id/topViewDrawing"
+                    android:background="#00000000"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_above="@id/pageIndicatorView" />
+                <com.rd.PageIndicatorView
+                    android:id="@id/pageIndicatorView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/medium_margin"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    app:piv_animationType="worm"
+                    app:piv_dynamicCount="true"
+                    app:piv_interactiveAnimation="true"
+                    app:piv_padding="@dimen/medium_margin"
+                    app:piv_radius="4.0dip"
+                    app:piv_selectedColor="@android:color/white"
+                    app:piv_unselectedColor="@android:color/darker_gray"
+                    app:piv_viewPager="@id/view_pager_desktop" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@id/fragment_layout"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <View
+                    android:id="@id/black_view_manager"
+                    android:background="@android:color/black"
+                    android:visibility="gone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40.0dip" />
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:weightSum="2.0"
+                    android:layout_above="@id/adContainer"
+                    android:layout_below="@id/black_view_manager">
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:id="@id/fragment_two_layout"
+                        android:visibility="gone"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0" />
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:id="@id/fragment_one_layout"
+                        android:visibility="gone"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@id/adContainer"
+                    android:background="@color/white"
+                    android:paddingBottom="10.0dip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <desktop.CustomViews.DragDismissLayout
+            android:orientation="vertical"
+            android:id="@id/startMenu"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/bottom_layer">
+            <include
+                layout="@layout/start_layout" />
+        </desktop.CustomViews.DragDismissLayout>
+        <desktop.CustomViews.DragDismissLayout
+            android:orientation="vertical"
+            android:id="@id/ll_action_center"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/bottom_layer">
+            <include
+                layout="@layout/action_center" />
+        </desktop.CustomViews.DragDismissLayout>
+        <desktop.CustomViews.DragDismissLayout
+            android:id="@id/ll_hidden_icons"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bottom_layer">
+            <include
+                layout="@layout/hidden_icons_layout" />
+        </desktop.CustomViews.DragDismissLayout>
+        <desktop.CustomViews.DragDismissLayout
+            android:orientation="vertical"
+            android:id="@id/ll_hidden_calendar"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_margin"
+            android:layout_above="@id/bottom_layer" />
+        <desktop.CustomViews.DragDismissLayout
+            android:orientation="vertical"
+            android:id="@id/ll_cortana_panel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_margin"
+            android:layout_above="@id/bottom_layer"
+            android:layout_alignParentLeft="true">
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@id/expandable_layout_cortana"
+                android:background="@android:color/white"
+                android:visibility="gone"
+                android:layout_width="200.0dip"
+                android:layout_height="450.0dip"
+                app:el_duration="350"
+                app:el_expanded="false"
+                app:el_parallax="0.5">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@id/ll_cortana_blur"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@id/ll_cortana_main"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                        <AutoCompleteTextView
+                            android:textColor="@android:color/black"
+                            android:id="@id/ac_tv_search_cortana"
+                            android:background="@drawable/square_edittext_bg"
+                            android:layout_width="fill_parent"
+                            android:layout_height="45.0dip"
+                            android:hint="@string/search"
+                            android:singleLine="true"
+                            android:drawableLeft="@drawable/cortana_blue"
+                            android:drawablePadding="@dimen/medium_margin"
+                            android:imeOptions="actionDone" />
+                        <TextView
+                            android:textSize="14.0sp"
+                            android:textColor="@android:color/white"
+                            android:layout_gravity="center"
+                            android:id="@id/tv_internet_available"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/internet_is_unavailable" />
+                        <ListView
+                            android:id="@id/cortana_list"
+                            android:scrollbars="none"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:divider="@color/transparent"
+                            android:dividerHeight="0.0dip" />
+                    </LinearLayout>
+                </LinearLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+        </desktop.CustomViews.DragDismissLayout>
+        <LinearLayout
+            android:id="@id/bottom_layer"
+            android:background="@color/taskbar_color"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip">
+                <LinearLayout
+                    android:id="@id/ll_bottom_layer_icons"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50.0dip"
+                    android:layout_toLeftOf="@id/ll_recent"
+                    android:layout_alignParentBottom="true">
+                    <ImageButton
+                        android:id="@id/start"
+                        android:background="@null"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="@dimen/medium_margin"
+                        android:layout_marginRight="@dimen/medium_margin"
+                        android:src="@drawable/window_selector" />
+                    <ImageButton
+                        android:id="@id/ib_cortana"
+                        android:background="@null"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_marginRight="@dimen/medium_margin"
+                        android:src="@drawable/cortana_white" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_gravity="center_vertical"
+                        android:id="@id/rv_taskbar"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:id="@id/ll_recent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50.0dip"
+                    android:layout_toLeftOf="@id/ll_time">
+                    <Button
+                        android:id="@id/btn_folder_opened"
+                        android:background="@drawable/folder_opened"
+                        android:visibility="gone"
+                        android:saveEnabled="false"
+                        android:layout_width="40.0dip"
+                        android:layout_height="fill_parent" />
+                    <RelativeLayout
+                        android:id="@id/rl_recent_thumbs"
+                        android:visibility="gone"
+                        android:layout_width="40.0dip"
+                        android:layout_height="fill_parent">
+                        <ImageView
+                            android:id="@id/iv_recent_apps_mask"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="@dimen/small_margin"
+                            android:src="@drawable/mask" />
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_alignLeft="@id/iv_recent_apps_mask"
+                            android:layout_alignTop="@id/iv_recent_apps_mask"
+                            android:layout_alignRight="@id/iv_recent_apps_mask"
+                            android:layout_alignBottom="@id/iv_recent_apps_mask">
+                            <ImageView
+                                android:id="@id/iv_recent_thumb_one"
+                                android:layout_width="10.0dip"
+                                android:layout_height="10.0dip"
+                                android:layout_marginLeft="@dimen/medium_margin"
+                                android:layout_marginTop="@dimen/normal_margin" />
+                            <ImageView
+                                android:id="@id/iv_recent_thumb_two"
+                                android:layout_width="10.0dip"
+                                android:layout_height="10.0dip"
+                                android:layout_marginTop="@dimen/normal_margin"
+                                android:layout_marginRight="@dimen/medium_margin"
+                                android:layout_alignParentRight="true" />
+                            <ImageView
+                                android:id="@id/iv_recent_thumb_three"
+                                android:layout_width="10.0dip"
+                                android:layout_height="10.0dip"
+                                android:layout_marginLeft="@dimen/medium_margin"
+                                android:layout_marginBottom="@dimen/normal_margin"
+                                android:layout_alignParentBottom="true" />
+                            <ImageView
+                                android:id="@id/iv_recent_thumb_four"
+                                android:layout_width="10.0dip"
+                                android:layout_height="10.0dip"
+                                android:layout_marginRight="@dimen/medium_margin"
+                                android:layout_marginBottom="@dimen/normal_margin"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentBottom="true" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:id="@id/ll_time"
+                    android:layout_width="150.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="@dimen/medium_margin"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true">
+                    <ImageView
+                        android:id="@id/iv_hidden_icons"
+                        android:padding="@dimen/medium_margin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:src="@drawable/up_arrow_white" />
+                    <LinearLayout
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:id="@id/ll_date_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="@dimen/medium_margin"
+                        android:layout_marginRight="@dimen/medium_margin">
+                        <DigitalClock
+                            android:textSize="12.0sp"
+                            android:textColor="@android:color/white"
+                            android:layout_gravity="center"
+                            android:id="@id/clock"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <CustomTextClock.TextClock
+                            android:textSize="11.0sp"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="center"
+                            android:id="@id/date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <ImageView
+                        android:id="@id/iv_action_center"
+                        android:layout_width="40.0dip"
+                        android:layout_height="fill_parent"
+                        android:src="@drawable/noti_normal"
+                        android:scaleType="center" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@id/ll_launcher_password"
+        android:visibility="visible"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+</RelativeLayout>

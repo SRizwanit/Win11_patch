@@ -1,0 +1,1 @@
+ALTER TABLE ThemeInfoTable ADD COLUMN info TEXT;

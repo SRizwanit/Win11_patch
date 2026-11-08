@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@id/rl_main"
+        android:background="@drawable/bg_purple_rounded"
+        android:layout_width="120.0dip"
+        android:layout_height="140.0dip"
+        android:layout_marginTop="0.0dip">
+        <TextView
+            android:textStyle="bold"
+            android:textColor="#ff3b4674"
+            android:layout_gravity="center_horizontal"
+            android:id="@id/note_label"
+            android:background="@drawable/bg_purple_note"
+            android:paddingLeft="@dimen/large_margin"
+            android:paddingTop="@dimen/medium_margin"
+            android:paddingRight="@dimen/large_margin"
+            android:paddingBottom="@dimen/medium_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/note"
+            android:paddingHorizontal="@dimen/large_margin"
+            android:paddingVertical="@dimen/medium_margin" />
+        <TextView
+            android:textSize="12.0sp"
+            android:textColor="#ff3b4674"
+            android:id="@id/tv_note"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginRight="@dimen/normal_margin"
+            android:layout_marginBottom="@dimen/large_margin"
+            android:text="@string/type_your_note" />
+    </LinearLayout>
+</FrameLayout>

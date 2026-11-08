@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/theme_active"
+        android:id="@id/theme_menu"
+        android:title="@string/themes" />
+    <item
+        android:icon="@drawable/lock_normal"
+        android:id="@id/lock_screen_menu"
+        android:title="@string/lock_screen" />
+    <item
+        android:icon="@drawable/apps_normal"
+        android:id="@id/app_menu"
+        android:title="@string/apps" />
+    <item
+        android:icon="@drawable/ic_control_center_normal"
+        android:id="@id/control_center_menu"
+        android:title="@string/control_center" />
+</menu>

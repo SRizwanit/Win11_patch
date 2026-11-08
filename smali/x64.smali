@@ -1,0 +1,79 @@
+.class public final Lx64;
+.super Lxn0;
+.source "SourceFile"
+
+
+# instance fields
+.field public t:Ljava/lang/Object;
+
+.field public u:Ljava/lang/Object;
+
+.field public v:Loo3;
+
+.field public w:J
+
+.field public synthetic x:Ljava/lang/Object;
+
+.field public final synthetic y:Lb74;
+
+.field public z:I
+
+
+# direct methods
+.method public constructor <init>(Lb74;Lxn0;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lx64;->y:Lb74;
+
+    .line 3
+    invoke-direct {p0, p2}, Lxn0;-><init>(Lvn0;)V
+
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final q(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
+
+    .line 1
+    iput-object p1, p0, Lx64;->x:Ljava/lang/Object;
+
+    .line 3
+    iget p1, p0, Lx64;->z:I
+
+    .line 5
+    const/high16 v0, -0x80000000
+
+    .line 7
+    or-int/2addr p1, v0
+
+    .line 8
+    iput p1, p0, Lx64;->z:I
+
+    .line 10
+    const-wide/16 v2, 0x0
+
+    .line 12
+    const/4 v4, 0x0
+
+    .line 13
+    iget-object v0, p0, Lx64;->y:Lb74;
+
+    .line 15
+    const/4 v1, 0x0
+
+    .line 16
+    move-object v5, p0
+
+    .line 17
+    invoke-virtual/range {v0 .. v5}, Lb74;->b(Ljava/lang/CharSequence;JLandroid/view/textclassifier/TextClassifier;Lxn0;)Ljava/lang/Object;
+
+    .line 20
+    move-result-object p0
+
+    .line 21
+    return-object p0
+.end method
