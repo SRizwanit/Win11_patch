@@ -1,0 +1,108 @@
+# Path: .github/workflows/build.yml
+name: Recompile & Sign APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Download latest Apktool
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          TAG=$(curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            https://api.github.com/repos/iBotPeaches/Apktool/releases/latest \
+            | grep -m1 '"tag_name"' | cut -d'"' -f4 || true)
+          TAG=${TAG:-v3.0.3}
+          echo "Apktool: $TAG"
+          curl -fsSL --retry 5 --retry-delay 10 --retry-all-errors \
+            -o apktool.jar \
+            "https://github.com/iBotPeaches/Apktool/releases/download/${TAG}/apktool_${TAG#v}.jar"
+          java -jar apktool.jar --version
+
+      - name: Locate project & convert apktool.json -> apktool.yml
+        run: |
+          # apktool.json (Apktool M) যেখানে আছে সেটাই project root
+          CFG=$(find . -maxdepth 3 -name apktool.json -not -path "./.git/*" | head -n1)
+          if [ -z "$CFG" ]; then
+            # apktool.yml থাকলে সরাসরি সেটা ব্যবহার হবে
+            CFG=$(find . -maxdepth 3 -name apktool.yml -not -path "./.git/*" | head -n1)
+            [ -z "$CFG" ] && { echo "apktool.json / apktool.yml পাওয়া যায়নি"; exit 1; }
+            echo "PROJECT_DIR=$(dirname "$CFG")" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          PROJECT_DIR=$(dirname "$CFG")
+          echo "PROJECT_DIR=$PROJECT_DIR" >> "$GITHUB_ENV"
+          APKTOOL_VER=$(java -jar apktool.jar --version | tr -d '\r')
+          python3 - "$PROJECT_DIR" "$APKTOOL_VER" <<'PY'
+          import json, sys, os
+          pd, ver = sys.argv[1], sys.argv[2]
+          d = json.load(open(os.path.join(pd, "apktool.json")))
+          s, v = d.get("sdkInfo", {}), d.get("VersionInfo", {})
+          o = [
+            "version: " + ver,
+            "apkFileName: app.apk",
+            "isFrameworkApk: false",
+            "usesFramework:\n  ids:\n  - 1",
+            "packageInfo:\n  forcedPackageId: 127",
+            "sdkInfo:\n  minSdkVersion: %s\n  targetSdkVersion: %s" % (s.get("minSdkVersion", "21"), s.get("targetSdkVersion", "34")),
+            "versionInfo:\n  versionCode: %s\n  versionName: %s" % (v.get("versionCode", "1"), v.get("versionName", "1.0")),
+            "resourcesAreCompressed: false",
+            "sharedLibrary: false",
+            "sparseResources: " + str(d.get("sparseResources", False)).lower(),
+            "doNotCompress:\n" + "\n".join("- " + str(x) for x in d.get("doNotCompress", [])),
+            "unknownFiles:\n" + "\n".join("  %s: %s" % (k, x) for k, x in d.get("unknownFiles", {}).items()),
+          ]
+          open(os.path.join(pd, "apktool.yml"), "w").write("\n".join(o) + "\n")
+          PY
+
+      - name: Recompile
+        run: |
+          java -jar apktool.jar b "$PROJECT_DIR" -o unsigned.apk
+
+      - name: Zipalign + Sign (default debug key)
+        run: |
+          BT="$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -n1)"
+          echo "Build-tools: $BT"
+
+          # Default debug keystore
+          keytool -genkeypair -v \
+            -keystore debug.keystore \
+            -alias androiddebugkey \
+            -storepass android -keypass android \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname "CN=Android Debug,O=Android,C=US"
+
+          "$BT/zipalign" -f -p 4 unsigned.apk aligned.apk
+
+          "$BT/apksigner" sign \
+            --ks debug.keystore \
+            --ks-key-alias androiddebugkey \
+            --ks-pass pass:android \
+            --key-pass pass:android \
+            --out recompiled-signed.apk \
+            aligned.apk
+
+          "$BT/apksigner" verify --verbose recompiled-signed.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: recompiled-signed-apk
+          path: recompiled-signed.apk
