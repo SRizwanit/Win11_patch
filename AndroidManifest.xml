@@ -68,6 +68,9 @@
     <!-- Allows the app to modify the system's settings data. Malicious apps may corrupt your system's configuration. -->
     <uses-permission
         android:name="android.permission.WRITE_SETTINGS" />
+    <!-- Allows the app to display content over other apps. The user must grant this special access in Settings. -->
+    <uses-permission
+        android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-feature
         android:name="android.hardware.wifi" />
     <!-- Allows the app to view information about Wi-Fi networking, such as whether Wi-Fi is enabled and name of connected Wi-Fi devices. -->
