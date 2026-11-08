@@ -1937,6 +1937,172 @@
     return-void
 .end method
 
+
+.method private final showMessagePopup(Landroid/service/notification/StatusBarNotification;)V
+    .locals 16
+
+    :try_start_0
+    invoke-virtual/range {p1 .. p1}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
+    move-result-object v0
+
+    const-string v1, "com.whatsapp"
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v2
+    if-nez v2, :supported_app
+
+    const-string v1, "com.facebook.orca"
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v2
+    if-eqz v2, :return
+
+    :supported_app
+    iget-object v0, p0, Lcom/centsol/w10launcher/notifications/NotificationService;->q:Landroid/content/Context;
+    if-eqz v0, :return
+
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/16 v2, 0x17
+    if-lt v1, v2, :overlay_check_done
+
+    invoke-static {v0}, Landroid/provider/Settings;->canDrawOverlays(Landroid/content/Context;)Z
+    move-result v1
+    if-eqz v1, :return
+
+    :overlay_check_done
+    invoke-virtual/range {p1 .. p1}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
+    move-result-object v1
+    iget-object v2, v1, Landroid/app/Notification;->extras:Landroid/os/Bundle;
+    if-eqz v2, :return
+
+    const-string v3, "android.title"
+    invoke-virtual {v2, v3}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
+    move-result-object v3
+
+    const-string v4, "android.bigText"
+    invoke-virtual {v2, v4}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
+    move-result-object v4
+
+    if-nez v4, :body_ready
+    const-string v5, "android.text"
+    invoke-virtual {v2, v5}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
+    move-result-object v4
+
+    :body_ready
+    if-eqz v3, :title_fallback
+    invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
+    move-result v5
+    if-nez v5, :title_ready
+
+    :title_fallback
+    invoke-virtual/range {p1 .. p1}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
+    move-result-object v5
+    const-string v6, "com.whatsapp"
+    invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v5
+    if-eqz v5, :messenger_title
+    const-string v3, "WhatsApp"
+    goto :title_ready
+
+    :messenger_title
+    const-string v3, "Messenger"
+
+    :title_ready
+    if-eqz v4, :return
+    invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
+    move-result v5
+    if-lez v5, :return
+
+    const-string v5, "window"
+    invoke-virtual {v0, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object v5
+    check-cast v5, Landroid/view/WindowManager;
+    if-eqz v5, :return
+
+    new-instance v6, Landroid/widget/LinearLayout;
+    invoke-direct {v6, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    const/4 v7, 0x1
+    invoke-virtual {v6, v7}, Landroid/widget/LinearLayout;->setOrientation(I)V
+
+    const/16 v7, 0x12
+    const/16 v8, 0x10
+    const/16 v9, 0x12
+    const/16 v10, 0x10
+    invoke-virtual {v6, v7, v8, v9, v10}, Landroid/view/View;->setPadding(IIII)V
+
+    new-instance v7, Landroid/graphics/drawable/GradientDrawable;
+    invoke-direct {v7}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
+    const v8, -0xe0e0e1
+    invoke-virtual {v7, v8}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
+    const/high16 v8, 0x41a00000    # 20.0f
+    invoke-virtual {v7, v8}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
+    invoke-virtual {v6, v7}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    new-instance v7, Landroid/widget/TextView;
+    invoke-direct {v7, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-virtual {v7, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    const/4 v8, -0x1
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setTextColor(I)V
+    const/high16 v8, 0x41800000    # 16.0f
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setTextSize(F)V
+    const/4 v8, 0x1
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setMaxLines(I)V
+    new-instance v8, Landroid/widget/LinearLayout$LayoutParams;
+    const/4 v9, -0x1
+    const/4 v10, -0x2
+    invoke-direct {v8, v9, v10}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+    invoke-virtual {v6, v7, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    new-instance v7, Landroid/widget/TextView;
+    invoke-direct {v7, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-virtual {v7, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    const v8, -0x222223
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setTextColor(I)V
+    const/high16 v8, 0x41700000    # 15.0f
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setTextSize(F)V
+    const/4 v8, 0x4
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setMaxLines(I)V
+    new-instance v8, Landroid/widget/LinearLayout$LayoutParams;
+    const/4 v9, -0x1
+    const/4 v10, -0x2
+    invoke-direct {v8, v9, v10}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+    invoke-virtual {v6, v7, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    new-instance v7, Landroid/view/WindowManager$LayoutParams;
+    const/16 v8, 0x140
+    const/4 v9, -0x2
+    const/16 v10, 0x7f6
+    const/16 v11, 0x108
+    const/4 v12, -0x3
+    invoke-direct {v7, v8, v9, v10, v11, v12}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
+    const/16 v8, 0x31
+    iput v8, v7, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    const/16 v8, 0x30
+    iput v8, v7, Landroid/view/WindowManager$LayoutParams;->y:I
+    const-string v8, "WhatsApp/Messenger notification popup"
+    iput-object v8, v7, Landroid/view/WindowManager$LayoutParams;->title:Ljava/lang/CharSequence;
+
+    invoke-interface {v5, v6, v7}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    iget-object v11, v1, Landroid/app/Notification;->contentIntent:Landroid/app/PendingIntent;
+
+    new-instance v7, Lcom/centsol/w10launcher/notifications/NotificationPopupDismiss;
+    invoke-direct {v7, v5, v6, v11}, Lcom/centsol/w10launcher/notifications/NotificationPopupDismiss;-><init>(Landroid/view/WindowManager;Landroid/view/View;Landroid/app/PendingIntent;)V
+    invoke-virtual {v6, v7}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    iget-object v8, p0, Lcom/centsol/w10launcher/notifications/NotificationService;->s:Landroid/os/Handler;
+    const-wide/16 v9, 0x1388
+    invoke-virtual {v8, v7, v9, v10}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :return
+    return-void
+
+    :catch_0
+    move-exception v0
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
+    return-void
+.end method
+
 .method public final onCreate()V
     .locals 1
 
@@ -2049,6 +2215,9 @@
 
 .method public final onNotificationPosted(Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;)V
     .locals 2
+
+    # Show supported messaging notifications independently of MainActivity lifecycle.
+    invoke-direct {p0, p1}, Lcom/centsol/w10launcher/notifications/NotificationService;->showMessagePopup(Landroid/service/notification/StatusBarNotification;)V
 
     .line 1
     new-instance p2, Lx18;
